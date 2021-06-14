@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Token Economy - Litentry Documentation</title>
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="This is official Litentry Documentation">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+                <link rel="stylesheet" href="../highlight.css">
+                <link rel="stylesheet" href="../tomorrow-night.css">
+                <link rel="stylesheet" href="../ayu-highlight.css">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/solarized-light.min.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction/introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introduction/protocol.html"><strong aria-hidden="true">1.1.</strong> Protocol</a></li><li class="chapter-item expanded "><a href="../introduction/tokenEconomy.html" class="active"><strong aria-hidden="true">1.2.</strong> Token Economy</a></li><li class="chapter-item expanded "><a href="../introduction/architecture.html"><strong aria-hidden="true">1.3.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="../introduction/privacyData.html"><strong aria-hidden="true">1.4.</strong> Privacy Data Feeding</a></li></ol></li><li class="chapter-item expanded "><a href="../runtime/runtime.html"><strong aria-hidden="true">2.</strong> Runtime</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../api/chainStorage.html"><strong aria-hidden="true">2.1.</strong> Chain Storage</a></li><li class="chapter-item expanded "><a href="../api/chainExtrinsic.html"><strong aria-hidden="true">2.2.</strong> Chain Extrinsic</a></li><li class="chapter-item expanded "><a href="../api/types.html"><strong aria-hidden="true">2.3.</strong> Chain Types</a></li></ol></li><li class="chapter-item expanded "><a href="../mobile-app/mobile-app.html"><strong aria-hidden="true">3.</strong> Litentry Authenticator</a></li><li class="chapter-item expanded "><a href="../sdk/sdk.html"><strong aria-hidden="true">4.</strong> SDK</a></li><li class="chapter-item expanded "><a href="../web-app/web-app.html"><strong aria-hidden="true">5.</strong> Litentry DApp Playground</a></li><li class="chapter-item expanded "><a href="../data-server/data-server.html"><strong aria-hidden="true">6.</strong> IPFS Data Center</a></li><li class="chapter-item expanded "><a href="../graphql/cache.html"><strong aria-hidden="true">7.</strong> GraphQL Caching Server</a></li><li class="chapter-item expanded "><a href="../light-client/light-client-services.html"><strong aria-hidden="true">8.</strong> Light Client Services</a></li><li class="chapter-item expanded "><a href="../registrar/LitentryRegistrar.html"><strong aria-hidden="true">9.</strong> Litentry Registrar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../registrar/HowToVerifyYourIdentity.html"><strong aria-hidden="true">9.1.</strong> How To Verifiy Your Identity</a></li><li class="chapter-item expanded "><a href="../registrar/RegistrarImplementationDetails.html"><strong aria-hidden="true">9.2.</strong> Registrar Implementation Details</a></li></ol></li><li class="chapter-item expanded "><a href="../faq/faq.html"><strong aria-hidden="true">10.</strong> FAQ</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">Litentry Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                <a href="https://github.com/litentry/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                                            </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="token-economy"><a class="header" href="#token-economy">Token Economy</a></h1>
+<h2 id="economy-participants"><a class="header" href="#economy-participants">Economy Participants</a></h2>
+<h4 id="identity-staker"><a class="header" href="#identity-staker">Identity Staker:</a></h4>
+<p>The users who has an identity recorded on chain, and has chosen to stake their identity and its related data into an identities mining pool.</p>
+<h4 id="identity-validator"><a class="header" href="#identity-validator">Identity Validator:</a></h4>
+<!-- <mark>After the staking identity of identity staker is confirmed on chain, he will become identity validator for the next few blocks. *no idea what this means*</mark>--> The identity validator is responsible for checking the correctness and completeness of the data from identity stakers.
+<h4 id="external-storage"><a class="header" href="#external-storage">External Storage:</a></h4>
+<p>A decentralized storage records all the related external data of the identity (Currently only IPFS, in the future we may add more database support)</p>
+<h4 id="identity-staking-data"><a class="header" href="#identity-staking-data">Identity Staking Data</a></h4>
+<p>The data that is staked in a mining pool for a particular identity that has chosen to stake their associated data.</p>
+<h4 id="node"><a class="header" href="#node">Node:</a></h4>
+<p>The node maintains the integrity of the network, the nodes task is firstly to record the state of the network <!-- <mark>*onchain?*</mark> Here network means Litentry blockchain network-->, and secondly to respond to data matching queries by sending data access requests to the external storage and using off-chain workers to validate the validity of the identity staking data.</p>
+<h4 id="data-demander"><a class="header" href="#data-demander">Data Demander:</a></h4>
+<!--An entity has either one of the following two types of requirement is data demander <mark>: Arbitrary identity data: request a matching identity (list) according to the types/requirement data of certain identity: in this case, the buyer will need an authorization token from the identity. *I cannot work out what two requirements that the data buyer has*</mark> I will correct these sentences. --> A data demander is a data consumer in the Litentry network. He retrieves specific data according to the criteria he needs. After the aggregation engine matches the data demander and provider, the demander needs an authorization token from the identity provider.
+<h4 id="data-origin-data-generator"><a class="header" href="#data-origin-data-generator">Data Origin (Data Generator):</a></h4>
+<p>there are three types of data origin:</p>
+<ol>
+<li>Decentralized services/apps generate data when user interact with the dapp. This data is signed by the data generator.</li>
+<li>Traditional services/apps may offer data migration services in this case the data may be signed or not. If it is signed and the data generator is registered on the Litentry network, the data generator also benefits <!-- <mark>(benefits how? financially?)</mark> the generator will receive incentive token as reward--> from data queries.</li>
+<li>User generate the data by his own.</li>
+</ol>
+<h2 id="identity-staking-process"><a class="header" href="#identity-staking-process">Identity Staking Process</a></h2>
+<h4 id="identity-preparation"><a class="header" href="#identity-preparation">Identity Preparation:</a></h4>
+<p>An identity staker who wants to stake their identity into the identity staking pool first needs to have the required data type and format attached to this identity, and the data must be stored correctly in the External Storage.</p>
+<h4 id="identity-data-picking"><a class="header" href="#identity-data-picking">Identity Data Picking:</a></h4>
+<p>Then the user chose which kind of the data he want to staked into the pool, only the picked type will be available for data matching, also the more data he chose, the more benefits he get, staker will need also pay a validation fee to the network and a basic staking deposit.</p>
+<h4 id="staking-identity-validation"><a class="header" href="#staking-identity-validation">Staking Identity Validation:</a></h4>
+<p>The data will be sent to random selected identity validator on the network. The selected identity validator will try to prove wether the data is correct or not.</p>
+<!-- <mark>*I am guessing that the randomly selected validator can reject or accept the data before it is sent to the remaining validators?* </mark> correct-->There are three possibilities:
+<ul>
+<li>If any one of the validators reject the data, the staking process fails, and part of the staking fee will be returned and the validator will not be paid.</li>
+<li>If all validators validate the data then identity with authorized data will be placed into the relevant identity pool, a validation fee is paid to validator.</li>
+<li>Same as above, if all validators validate the data then identity with authorized data will be placed into the relevant identity pool. But if in the next 30 block any malicious data is found for this identity, a part of reward of all the approving validators will be slashed, this slashing amount is decided by the existing blocks number (in this case, 30) of the existing malicious data.</li>
+</ul>
+<h4 id="staking-identity-finalization"><a class="header" href="#staking-identity-finalization">Staking Identity Finalization:</a></h4>
+<p>The value of the identity data will be judged by its completeness and the requirements from data demander. <!--<mark>No identity data is stored, afterward each block *I cannot work out what this is saying*</mark> --> After the data from the identity staker is accepted, the identity staker will receive rewards, and the reward is bound to the staking identity until it retires from the identities pool. The value of the data being staked is quantified, and the staker will earn staking rewards in proportion to the value of the data staked.</p>
+<h4 id="staking-identity-retirement"><a class="header" href="#staking-identity-retirement">Staking Identity Retirement:</a></h4>
+<p>After certain block, the identity will be retired from the identities pool, after that, the rewards bound to the identity and the deposit will be released. User could choose to update the identity data and then restake it to earn further rewards.</p>
+<h2 id="identity-query-process"><a class="header" href="#identity-query-process">Identity Query Process</a></h2>
+<p>According to the different data type required by data buyer. There are two types of query</p>
+<h3 id="1-matching-query"><a class="header" href="#1-matching-query">1. Matching Query</a></h3>
+<h4 id="data-matching-request"><a class="header" href="#data-matching-request">Data Matching Request:</a></h4>
+<p>Data buyer submits a request for data with a selected data type and criteria thsi is called a matching query.</p>
+<h4 id="data-matching-pre-making"><a class="header" href="#data-matching-pre-making">Data Matching Pre-Making:</a></h4>
+<p>The Off-chain worker in the network will now start to generate a list with randomly selected identities that have the required type of data. The length of the list is decided by the fees the data buyer selected to pay, the more data the buyer pays for, the bigger the list. The on-chain randomness makes sure that each time the result list will be different, thus incentivising the data buyer to make multiple queries.<!-- <mark>*I am not sure if my interpretation of this is correct*</mark> correct. --></p>
+<h4 id="data-selection"><a class="header" href="#data-selection">Data Selection:</a></h4>
+<p>The selected list of identities is sent to the external storage. The data is aggregaed and sent back to the network and received by an off-chain worker. The off-chain worker will use the selection algorithms to get the most suitable identity data for the buyer. This data is then sent back to the buyer. The match winner will get the most of the fee paid by the buyer, others fee goes to the others in the list and data origin <!-- <mark>*I got totally lost here not sure who the match winner is*</mark> the Litentry offchain worker will match the demander and provider. Then the staker validotrs are responded to validate the data.-->. Litentry will earn a small part of the fees paid.</p>
+<h3 id="2-target-identity-query"><a class="header" href="#2-target-identity-query">2. Target Identity Query</a></h3>
+<h4 id="identity-data-request"><a class="header" href="#identity-data-request">Identity Data Request:</a></h4>
+<p>Data buyer submits a request for specific data associated with a specified identity (the data staked for a specific person). The query must include the matching data type required and the identity id of the relevant identity staker. For user security the query must include an authorization token signed by the identity owner.</p>
+<h4 id="request-validation"><a class="header" href="#request-validation">Request Validation:</a></h4>
+<p><mark>A</mark>node in the network will check the authorization token issuer, receiver, and validate the block number. From this the node will validate the request.</p>
+<h4 id="request-finalization"><a class="header" href="#request-finalization">Request Finalization:</a></h4>
+<p>Once the node has validated the request a data request event is triggered, the off-chain worker starts to request the specified data from external storage, once the data is received, it is sent as an http request back to the data buyer. A fee is paid to the identity owner <!--<mark>and its related data origin *I have no idea what the related data origin is*</mark> just delete the related data origin-->, and Litentry will earn a small administration fee.</p>
+<h2 id="incentivization"><a class="header" href="#incentivization">Incentivization</a></h2>
+<p>Basics: LIT is the native token of Litentry Network, each block the network will give a fixed block reward to all identity stakers in the identity staking pool. In the staking finalization process, the value of the staking identity data will have been quantified. The block reward will be distributed to identity stakers in accordance to this quantified identity staking value.</p>
+<h4 id="for-identity-staker"><a class="header" href="#for-identity-staker">For Identity Staker:</a></h4>
+<p>Identity stakers earn profits from two parts,</p>
+<ol>
+<li>Block Reward: Once staker data is accepted into the identity staking pool, the Identity Staker will get the reward for each block.</li>
+<li>Matching Fee: When the matching query with staked identity succeeds, the owner will get paid. In the early stages, where there are not many matching requests, the identity staker will mostly benefits from block reward. When the network gets more data buyers and becomes mature, the share of matching fee will more evenly distributed to the high quality identity staker. Thus in the long term an identity staker’s main benefit will be the matching fee thus incentivising an identity staker to stake the highest quality data possible.</li>
+</ol>
+<h4 id="for-identity-validator"><a class="header" href="#for-identity-validator">For Identity Validator</a></h4>
+<p>Users are motivated to run an Identity Validator because it is part of the responsibility to validate the correctness of the data. If the identity validator proves the data, it will get rewarded once the data is used since the validator has proved the correctness and completeness of the data.<!-- <mark>*I almost get what is being said here but I think I still have a confusion between the identity validator and the identity staker. It almost feels like these are being considered to be one by Litentry but in my model I still see them as different.*</mark> the identity staker is the data provider, and the identity validator are people who checks the correctness and completeness of the data from identity stakers.--></p>
+<h4 id="for-dapp-as-data-provider"><a class="header" href="#for-dapp-as-data-provider">For Dapp as Data Provider</a></h4>
+<p>Explicit benefits are the grants from Litentry Foundation; each success data matching will pay the fee back to the Dapp or Data Provider. Implicit benefits are a new way to attract new users for their Dapp since users could harvest their data and be glad to use their services. <!-- <mark>*I would need to understand this better*</mark> --></p>
+<h4 id="for-node"><a class="header" href="#for-node">For Node</a></h4>
+<p>As the network maintainer, a node will get native token reward (LIT) from the Litentry network.</p>
+<h4 id="for-external-storage"><a class="header" href="#for-external-storage">For External Storage</a></h4>
+<p>The fee that the identity staker pays when they stake is used to pay storage fee to the external storage for their data. This matches the decentralised external storage business model perfectly and they are therfore willing to provide their services to Litentry network.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../introduction/protocol.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../introduction/architecture.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../introduction/protocol.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../introduction/architecture.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+        
+        
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>

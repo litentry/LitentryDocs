@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Introduction - Litentry Documentation</title>
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="This is official Litentry Documentation">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+                <link rel="stylesheet" href="../highlight.css">
+                <link rel="stylesheet" href="../tomorrow-night.css">
+                <link rel="stylesheet" href="../ayu-highlight.css">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/solarized-light.min.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction/introduction.html" class="active"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introduction/protocol.html"><strong aria-hidden="true">1.1.</strong> Protocol</a></li><li class="chapter-item expanded "><a href="../introduction/tokenEconomy.html"><strong aria-hidden="true">1.2.</strong> Token Economy</a></li><li class="chapter-item expanded "><a href="../introduction/architecture.html"><strong aria-hidden="true">1.3.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="../introduction/privacyData.html"><strong aria-hidden="true">1.4.</strong> Privacy Data Feeding</a></li></ol></li><li class="chapter-item expanded "><a href="../runtime/runtime.html"><strong aria-hidden="true">2.</strong> Runtime</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../api/chainStorage.html"><strong aria-hidden="true">2.1.</strong> Chain Storage</a></li><li class="chapter-item expanded "><a href="../api/chainExtrinsic.html"><strong aria-hidden="true">2.2.</strong> Chain Extrinsic</a></li><li class="chapter-item expanded "><a href="../api/types.html"><strong aria-hidden="true">2.3.</strong> Chain Types</a></li></ol></li><li class="chapter-item expanded "><a href="../mobile-app/mobile-app.html"><strong aria-hidden="true">3.</strong> Litentry Authenticator</a></li><li class="chapter-item expanded "><a href="../sdk/sdk.html"><strong aria-hidden="true">4.</strong> SDK</a></li><li class="chapter-item expanded "><a href="../web-app/web-app.html"><strong aria-hidden="true">5.</strong> Litentry DApp Playground</a></li><li class="chapter-item expanded "><a href="../data-server/data-server.html"><strong aria-hidden="true">6.</strong> IPFS Data Center</a></li><li class="chapter-item expanded "><a href="../graphql/cache.html"><strong aria-hidden="true">7.</strong> GraphQL Caching Server</a></li><li class="chapter-item expanded "><a href="../light-client/light-client-services.html"><strong aria-hidden="true">8.</strong> Light Client Services</a></li><li class="chapter-item expanded "><a href="../registrar/LitentryRegistrar.html"><strong aria-hidden="true">9.</strong> Litentry Registrar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../registrar/HowToVerifyYourIdentity.html"><strong aria-hidden="true">9.1.</strong> How To Verifiy Your Identity</a></li><li class="chapter-item expanded "><a href="../registrar/RegistrarImplementationDetails.html"><strong aria-hidden="true">9.2.</strong> Registrar Implementation Details</a></li></ol></li><li class="chapter-item expanded "><a href="../faq/faq.html"><strong aria-hidden="true">10.</strong> FAQ</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">Litentry Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                <a href="https://github.com/litentry/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                                            </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p><strong>Litentry Protocol is helping support change that in favour of a user-centric internet with the blockchain.</strong></p>
+<h2 id="concept-of-user-centric-internet"><a class="header" href="#concept-of-user-centric-internet">Concept of User-Centric Internet</a></h2>
+<p>As you entrust safe-storage of your passwords and online activity data to third parties on the app-centric internet of today, you are often asked to comply with ambiguous and unfair privacy policies handing over control your own data. As a result your data is often harvested and used in ways you do not have a say in and which you have not approved of.</p>
+<p>Litentry is helping support change that in favor of a user-centric internet with the blockchain. That means the internet should driven by the users needs. <!-- <mark>We decide what services or apps to users *(I have no idea what this means or is trying to say) I am taking a guess at this. --> As a Litentry user you are in total control of your information and will be able to decide exactly what information is shared with various apps and services. You will not be subject to the cost of migration from one application to another or subject to specific terms of a particular app or service. The profit generated by the user's data should flow back to you the user, instead of mainly flowing to service providers/companies, this is made possible by woning your own data and not being subject to the restrictions and applications lockins that are so familiar with Internet 2.0. With Litentry and Internet 3.0 you will be able to ensure that you only provide your user data when you want to and that you are rewarded if/when you supply your data to any advertiser or service provider.</p>
+<p>Litentry includes an identity-based network and related tools, as a whole it consists of a decentralized identity authentication and user activity data management infrastructure.</p>
+<!-- <mark>The protocol and network designed at start is not only fits to the internet, but also fits to all the digital services in the real world. *I have no idea what this is trying to say*</mark> I have no idea as well, just delete this sentence-->
+<h2 id="highlighths"><a class="header" href="#highlighths">Highlighths</a></h2>
+<h4 id="blockchain-powered"><a class="header" href="#blockchain-powered">Blockchain Powered</a></h4>
+<p>Litentry is built on Substrate, and as such Litentry inherits the leading edge technologies of the Blockchain industry. Litentry aim to be one of the first Parachains of Polkadot Network and as such benefit from this thriving cross-chain ecosystem and Polkadot's shared security.</p>
+<h4 id="identity-management"><a class="header" href="#identity-management">Identity Management</a></h4>
+<p>Users get back the control of access history and privacy data generated in the apps or services. And their identities are kept anonymous and independent from each other.<mark></mark></p>
+<h4 id="decentralized-storage"><a class="header" href="#decentralized-storage">Decentralized Storage</a></h4>
+<p>A user is able to store their encrypted identity related data on a decentralized storage like IPFS or Arweave, or an on-chain Database. The data is protected by the access control of decentralized storage.</p>
+<h4 id="identity-staking"><a class="header" href="#identity-staking">Identity Staking</a></h4>
+<p>With a transparent protocol, an identity owner could stake his identity into identity pools and get regular rewards while still having their data and real world identity protected. In other words by staking your identity and data, you make your data available anonymously to be queried and mined by an app or service. This means that your data can be monetised for your benefit as well as for the DApp that is mining the data through permissioned data queries.</p>
+<h4 id="decentralized-ecosystem-contributor"><a class="header" href="#decentralized-ecosystem-contributor">Decentralized Ecosystem Contributor</a></h4>
+<p>Since your identity profile can be shared anonymously between different platforms, a user does not need to create multiple accounts in each application in order to use the different services without creating user profiles, passwords and registration with each service. Because the user owns his/her data the barriers of migrating to another service are significantly lower. This allows the user to easily migrate to the service or application that best services their needs in a frictionless manner. Because the user owns their own data and profile the application or service is prevented from building an invasive user profile. Through this Litentry, the user and the decentralized ecosystem benefit each other.</p>
+<h2 id="concept-of-decentralization"><a class="header" href="#concept-of-decentralization">Concept of Decentralization</a></h2>
+<p>The decentralization of Litentry includes following aspects:</p>
+<h4 id="decentralization-of-identity-storage"><a class="header" href="#decentralization-of-identity-storage">Decentralization of identity storage</a></h4>
+<p>With Litentry the User's data, including identity credential, are stored in a anonymous encrypted decentralized storage, instead of the central data server of the service provider, currently we support IPFS, in the future we will have other storage support like Arwaeve or Litentry native on-chain key-value store.</p>
+<h4 id="decentralization-of-identity-authentication"><a class="header" href="#decentralization-of-identity-authentication">Decentralization of identity authentication</a></h4>
+<!-- <mark> The identity validator connect to the decentralized network periodically, and it could validate the authentication request independently. *I have no idea what this is saying. </mark>--> When user requires an authentication, he needs to submit an authentication request transaction. The identity validator listens to the authentication request event from the Litentry Mainnet. Then it provides validation for the authentication request. 
+<h4 id="decentralization-of-identity-relationships"><a class="header" href="#decentralization-of-identity-relationships">Decentralization of identity relationships</a></h4>
+<p>The relationship of user's data stored in an external storage, and the identity associated with it is validated with cryptographic calculation, and is recorded in the decentralized network instead of regular centralized service like Certificate Authority used in HTTPS protocol. The owner (real person) may have different identities and the different identities belonging to owner are not discoverable in any of the data, and protected by Schnorr25519 Algorithm. In a similar way to which your public and private keys of a wallet are related but your private key is not discoverable from you public key.</p>
+<h4 id="decentralization-of-identity-data-allocation"><a class="header" href="#decentralization-of-identity-data-allocation">Decentralization of Identity Data Allocation</a></h4>
+<p>The user data generated when using third party applications/services is processed by the resolver function on Litentry Network, thus providing the user with trustworthy data, from various sources. As such users are able to get and store valuable user profile like health info, shopping history, etc.</p>
+<h2 id="definitions"><a class="header" href="#definitions">Definitions</a></h2>
+<h4 id="user"><a class="header" href="#user">User</a></h4>
+<p>The user is the origionator of the data, it is a person who owns one or more identities or IoT devices.</p>
+<h4 id="identity"><a class="header" href="#identity">Identity</a></h4>
+<p>It is a generalized concept of identity, not only includes the identity of a person, but also the identity of anything tht could generate claims like an IoT device. A person could own multiple identities, like an identity that only related to their music preferences, an identity only for data in Germany, or an identity as a game player in a specific game or accross many games. The identity is the reference to its related external user data, the id by itself does not have any meaning other than the linking of the user with the external user data.</p>
+<h4 id="external-data"><a class="header" href="#external-data">External Data</a></h4>
+<p>Data generated when using the applications/services like the shopping history when a user is shopping in e-store. This external user data is associated with a particular user identity. <!-- <mark>, or the age data read from the aforementioned age proving request.</mark> --></p>
+<h4 id="authorization-token"><a class="header" href="#authorization-token">Authorization Token</a></h4>
+<!--<mark>A piece of data that proves the read or write permission to identity’s external data. Like the permission to read the age data of a person.</mark> just delete this sentence -->
+<p>The authorization token is a cryptographic proof that the holder of the token has permission to read and/or write external data for the related identity. This is similar to an authorisation token that would give permission to do a transaction from your crypto wallet.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                                                    <a rel="next" href="../introduction/protocol.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                                    <a rel="next" href="../introduction/protocol.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+        
+        
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>

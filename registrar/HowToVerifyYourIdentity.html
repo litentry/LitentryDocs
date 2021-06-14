@@ -1,0 +1,257 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>How To Verifiy Your Identity - Litentry Documentation</title>
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="This is official Litentry Documentation">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+                <link rel="stylesheet" href="../highlight.css">
+                <link rel="stylesheet" href="../tomorrow-night.css">
+                <link rel="stylesheet" href="../ayu-highlight.css">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/solarized-light.min.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction/introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introduction/protocol.html"><strong aria-hidden="true">1.1.</strong> Protocol</a></li><li class="chapter-item expanded "><a href="../introduction/tokenEconomy.html"><strong aria-hidden="true">1.2.</strong> Token Economy</a></li><li class="chapter-item expanded "><a href="../introduction/architecture.html"><strong aria-hidden="true">1.3.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="../introduction/privacyData.html"><strong aria-hidden="true">1.4.</strong> Privacy Data Feeding</a></li></ol></li><li class="chapter-item expanded "><a href="../runtime/runtime.html"><strong aria-hidden="true">2.</strong> Runtime</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../api/chainStorage.html"><strong aria-hidden="true">2.1.</strong> Chain Storage</a></li><li class="chapter-item expanded "><a href="../api/chainExtrinsic.html"><strong aria-hidden="true">2.2.</strong> Chain Extrinsic</a></li><li class="chapter-item expanded "><a href="../api/types.html"><strong aria-hidden="true">2.3.</strong> Chain Types</a></li></ol></li><li class="chapter-item expanded "><a href="../mobile-app/mobile-app.html"><strong aria-hidden="true">3.</strong> Litentry Authenticator</a></li><li class="chapter-item expanded "><a href="../sdk/sdk.html"><strong aria-hidden="true">4.</strong> SDK</a></li><li class="chapter-item expanded "><a href="../web-app/web-app.html"><strong aria-hidden="true">5.</strong> Litentry DApp Playground</a></li><li class="chapter-item expanded "><a href="../data-server/data-server.html"><strong aria-hidden="true">6.</strong> IPFS Data Center</a></li><li class="chapter-item expanded "><a href="../graphql/cache.html"><strong aria-hidden="true">7.</strong> GraphQL Caching Server</a></li><li class="chapter-item expanded "><a href="../light-client/light-client-services.html"><strong aria-hidden="true">8.</strong> Light Client Services</a></li><li class="chapter-item expanded "><a href="../registrar/LitentryRegistrar.html"><strong aria-hidden="true">9.</strong> Litentry Registrar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../registrar/HowToVerifyYourIdentity.html" class="active"><strong aria-hidden="true">9.1.</strong> How To Verifiy Your Identity</a></li><li class="chapter-item expanded "><a href="../registrar/RegistrarImplementationDetails.html"><strong aria-hidden="true">9.2.</strong> Registrar Implementation Details</a></li></ol></li><li class="chapter-item expanded "><a href="../faq/faq.html"><strong aria-hidden="true">10.</strong> FAQ</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">Litentry Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                <a href="https://github.com/litentry/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                                            </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="how-to-verify-your-identity"><a class="header" href="#how-to-verify-your-identity">How To Verify Your Identity</a></h1>
+<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
+<p>While the anonymity Web3 provides has a great advantage in user privacy, revealing partial personal information can help gain a higher reputation and trust in the Polkadot ecosystem. This document introduces a registrar service that is fully automatic, leveraging cryptographical design to eliminate human interventions. Litentry registrar focuses on providing judgment for a user's <code>display name</code>, <code>email</code>, <code>twitter</code>, or <code>element name (previously called riot)</code>while preserving user privacy.</p>
+<p>We will walk through the identity verification process step by step: First, users need to set their identity information on the chain; Second, they may request the registrar to verify the identity. Users will enter a maximum fee they are willing to pay for the service. After that, the dedicated registrar can ascertain.</p>
+<h3 id="step-1-set-an-on-chain-identity"><a class="header" href="#step-1-set-an-on-chain-identity">Step 1: Set an on-chain identity</a></h3>
+<ul>
+<li>Go to the 'Accounts' session on <a href="https://polkadot.js.org/apps">Polkadot-JS Apps</a></li>
+<li>Make sure you're in the Kusama network by looking at the top left of the page. If not, click on the toggle to switch</li>
+<li>On the accounts list, click on the dots icon on the right side of your selected account and click <code>Set on-chain identity</code>.</li>
+</ul>
+<p align="center">
+<img src="./registrar1.png" alt="litentryRegistrar" width="75%" /></p>
+<p align="center">Figure 1.1  Set on-chain Identity</p>
+<ul>
+<li>You'll see a popup window of 'register identity'. Click to turn on include field of display name , email , twitter , riot(also known as element) and enter your information. Once you finish, click Set Identity to submit the transaction.</li>
+</ul>
+<p align="center">
+<img src="./registrar2.png" alt="litentryReggistrar" width="60%" /></p>
+<p align="center">Figure 1.2  Submit Identity information</p>
+Now you have successfully submitted an identity! Since your information is not verified yet, you will see a ⚪️ next to your username.
+<p align="center">
+<img src="./registrar3.png" alt="litentryReggistrar" width="40%" height="40%"/></p>
+<p align="center">Figure 1.3 Unverified Account</p>
+<h3 id="step-2-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmljudgement-requestjudgement-requesta"><a class="header" href="#step-2-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmljudgement-requestjudgement-requesta">Step 2: <a href="https://docs.litentry.com/registrar/HowToVerifyYourIdentity.html#judgement-request">Judgement Request</a></a></h3>
+<p>To request the registrar to validate your on-chain information:</p>
+<ul>
+<li>Go to Developer-&gt;Extrinsic, select your account.</li>
+<li>Select <code>identity</code> under <code>submit the following extrinsic</code>, and <code>requestJudgement(reg_index, max_fee)</code> transaction.</li>
+<li>Enter '4' for <code>reg_index</code>(index of the registrar)</li>
+<li>Enter '0.04' KSM for the service fee.</li>
+<li>Click on <code>Submit transaction</code></li>
+</ul>
+<p align="center">
+<img src="./registrar5.png" alt="litentryReggistrar" width="75%" /></p>
+<p align="center">Figure 1.4 Judgement Request</p></center>
+<h3 id="step-3-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmlemail-verificationemail-verificationa"><a class="header" href="#step-3-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmlemail-verificationemail-verificationa">Step 3: <a href="https://docs.litentry.com/registrar/HowToVerifyYourIdentity.html#email-verification">Email Verification</a></a></h3>
+<p>You should receive a verification email from Litentry. Click on &quot;Verify Email Now&quot; to complete the verification process (see figure 1.5). After that, you will receive another email that confirms the verification. </p>
+<p align="center">
+<img src="./email.png" alt="litentryReggistrar" width="50%"/></p>
+<p align="center">Figure 1.5 Email Verification Example</p>
+<h3 id="step-4-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmlelement-verificationelement-verificationa-optional"><a class="header" href="#step-4-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmlelement-verificationelement-verificationa-optional">Step 4: <a href="https://docs.litentry.com/registrar/HowToVerifyYourIdentity.html#element-verification">Element Verification</a> (Optional)</a></h3>
+<ul>
+<li>An invitation will be sent from &quot;litentry-bot&quot; on Element, accept the invitation</li>
+<li>Click on the verification link from &quot;litentry-bot&quot; to complete verification of the element account. Once the verification process is completed, you will receive a confirmation message (see figure 1.6).</li>
+</ul>
+<p align="center">
+<img src="./riot.png" alt="litentryReggistrar" width="50%"/></p>
+<p align="center">Figure 1.6 Element Verification Example
+</p>
+<h3 id="step-5-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmltwitter-verificationtwitter-verificationa-optional"><a class="header" href="#step-5-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmltwitter-verificationtwitter-verificationa-optional">Step 5: <a href="https://docs.litentry.com/registrar/HowToVerifyYourIdentity.html#twitter-verification">Twitter Verification</a> (Optional)</a></h3>
+<ul>
+<li>Follow <strong>@LitentryReg</strong> on Twitter</li>
+<li>Make sure your account is open to private messages in your privacy settings. Otherwise, the verification message will not go through.</li>
+<li>You'll receive a verification link on DM from @LitentryReg. Click on the link to complete verification of your Twitter account. Once it is completed, you will receive a confirmation message (see figure 1.7).</li>
+</ul>
+<p align="center">
+<img src="./twitter.png" alt="litentryReggistrar" width="50%"/></p>
+<p align="center">Figure 1.7 Twitter Verification Example</p>
+<p>Once everything is successfully verified, you will see your account status become &quot;reasonable&quot; with an ✅ icon. Congratulations - Your identity is now verified on Polkadot-JS Apps!</p>
+<h3 id="register-fee"><a class="header" href="#register-fee">Register Fee</a></h3>
+<p>The judgment fee of the Litentry Registrar is 0.04KSM.</p>
+<p>It's important to notice that no KSM is sent to our registrar at any time before the judgment is completed. You should NOT send funds to our account directly. When calling <code>requestJudgement</code>, the registrar fee will be locked and put aside. It will be transferred to the registrar only after the registrar finishes its job.</p>
+<h3 id="support"><a class="header" href="#support">Support</a></h3>
+<p>If you have any question, contact us via <a href="https://app.element.io/#/room/#litentry-registrar-support:matrix.org">Element Room</a> or registrar-support@litentry.com</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../registrar/LitentryRegistrar.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../registrar/RegistrarImplementationDetails.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../registrar/LitentryRegistrar.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../registrar/RegistrarImplementationDetails.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+        
+        
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>

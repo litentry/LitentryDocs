@@ -1,0 +1,820 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Litentry Documentation</title>
+                <meta name="robots" content="noindex" />
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="This is official Litentry Documentation">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+                <link rel="stylesheet" href="highlight.css">
+                <link rel="stylesheet" href="tomorrow-night.css">
+                <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/solarized-light.min.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction/introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction/protocol.html"><strong aria-hidden="true">1.1.</strong> Protocol</a></li><li class="chapter-item expanded "><a href="introduction/tokenEconomy.html"><strong aria-hidden="true">1.2.</strong> Token Economy</a></li><li class="chapter-item expanded "><a href="introduction/architecture.html"><strong aria-hidden="true">1.3.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="introduction/privacyData.html"><strong aria-hidden="true">1.4.</strong> Privacy Data Feeding</a></li></ol></li><li class="chapter-item expanded "><a href="runtime/runtime.html"><strong aria-hidden="true">2.</strong> Runtime</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="api/chainStorage.html"><strong aria-hidden="true">2.1.</strong> Chain Storage</a></li><li class="chapter-item expanded "><a href="api/chainExtrinsic.html"><strong aria-hidden="true">2.2.</strong> Chain Extrinsic</a></li><li class="chapter-item expanded "><a href="api/types.html"><strong aria-hidden="true">2.3.</strong> Chain Types</a></li></ol></li><li class="chapter-item expanded "><a href="mobile-app/mobile-app.html"><strong aria-hidden="true">3.</strong> Litentry Authenticator</a></li><li class="chapter-item expanded "><a href="sdk/sdk.html"><strong aria-hidden="true">4.</strong> SDK</a></li><li class="chapter-item expanded "><a href="web-app/web-app.html"><strong aria-hidden="true">5.</strong> Litentry DApp Playground</a></li><li class="chapter-item expanded "><a href="data-server/data-server.html"><strong aria-hidden="true">6.</strong> IPFS Data Center</a></li><li class="chapter-item expanded "><a href="graphql/cache.html"><strong aria-hidden="true">7.</strong> GraphQL Caching Server</a></li><li class="chapter-item expanded "><a href="light-client/light-client-services.html"><strong aria-hidden="true">8.</strong> Light Client Services</a></li><li class="chapter-item expanded "><a href="registrar/LitentryRegistrar.html"><strong aria-hidden="true">9.</strong> Litentry Registrar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="registrar/HowToVerifyYourIdentity.html"><strong aria-hidden="true">9.1.</strong> How To Verifiy Your Identity</a></li><li class="chapter-item expanded "><a href="registrar/RegistrarImplementationDetails.html"><strong aria-hidden="true">9.2.</strong> Registrar Implementation Details</a></li></ol></li><li class="chapter-item expanded "><a href="faq/faq.html"><strong aria-hidden="true">10.</strong> FAQ</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">Litentry Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                <a href="https://github.com/litentry/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                                            </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p><strong>Litentry Protocol is helping support change that in favour of a user-centric internet with the blockchain.</strong></p>
+<h2 id="concept-of-user-centric-internet"><a class="header" href="#concept-of-user-centric-internet">Concept of User-Centric Internet</a></h2>
+<p>As you entrust safe-storage of your passwords and online activity data to third parties on the app-centric internet of today, you are often asked to comply with ambiguous and unfair privacy policies handing over control your own data. As a result your data is often harvested and used in ways you do not have a say in and which you have not approved of.</p>
+<p>Litentry is helping support change that in favor of a user-centric internet with the blockchain. That means the internet should driven by the users needs. <!-- <mark>We decide what services or apps to users *(I have no idea what this means or is trying to say) I am taking a guess at this. --> As a Litentry user you are in total control of your information and will be able to decide exactly what information is shared with various apps and services. You will not be subject to the cost of migration from one application to another or subject to specific terms of a particular app or service. The profit generated by the user's data should flow back to you the user, instead of mainly flowing to service providers/companies, this is made possible by woning your own data and not being subject to the restrictions and applications lockins that are so familiar with Internet 2.0. With Litentry and Internet 3.0 you will be able to ensure that you only provide your user data when you want to and that you are rewarded if/when you supply your data to any advertiser or service provider.</p>
+<p>Litentry includes an identity-based network and related tools, as a whole it consists of a decentralized identity authentication and user activity data management infrastructure.</p>
+<!-- <mark>The protocol and network designed at start is not only fits to the internet, but also fits to all the digital services in the real world. *I have no idea what this is trying to say*</mark> I have no idea as well, just delete this sentence-->
+<h2 id="highlighths"><a class="header" href="#highlighths">Highlighths</a></h2>
+<h4 id="blockchain-powered"><a class="header" href="#blockchain-powered">Blockchain Powered</a></h4>
+<p>Litentry is built on Substrate, and as such Litentry inherits the leading edge technologies of the Blockchain industry. Litentry aim to be one of the first Parachains of Polkadot Network and as such benefit from this thriving cross-chain ecosystem and Polkadot's shared security.</p>
+<h4 id="identity-management"><a class="header" href="#identity-management">Identity Management</a></h4>
+<p>Users get back the control of access history and privacy data generated in the apps or services. And their identities are kept anonymous and independent from each other.<mark></mark></p>
+<h4 id="decentralized-storage"><a class="header" href="#decentralized-storage">Decentralized Storage</a></h4>
+<p>A user is able to store their encrypted identity related data on a decentralized storage like IPFS or Arweave, or an on-chain Database. The data is protected by the access control of decentralized storage.</p>
+<h4 id="identity-staking"><a class="header" href="#identity-staking">Identity Staking</a></h4>
+<p>With a transparent protocol, an identity owner could stake his identity into identity pools and get regular rewards while still having their data and real world identity protected. In other words by staking your identity and data, you make your data available anonymously to be queried and mined by an app or service. This means that your data can be monetised for your benefit as well as for the DApp that is mining the data through permissioned data queries.</p>
+<h4 id="decentralized-ecosystem-contributor"><a class="header" href="#decentralized-ecosystem-contributor">Decentralized Ecosystem Contributor</a></h4>
+<p>Since your identity profile can be shared anonymously between different platforms, a user does not need to create multiple accounts in each application in order to use the different services without creating user profiles, passwords and registration with each service. Because the user owns his/her data the barriers of migrating to another service are significantly lower. This allows the user to easily migrate to the service or application that best services their needs in a frictionless manner. Because the user owns their own data and profile the application or service is prevented from building an invasive user profile. Through this Litentry, the user and the decentralized ecosystem benefit each other.</p>
+<h2 id="concept-of-decentralization"><a class="header" href="#concept-of-decentralization">Concept of Decentralization</a></h2>
+<p>The decentralization of Litentry includes following aspects:</p>
+<h4 id="decentralization-of-identity-storage"><a class="header" href="#decentralization-of-identity-storage">Decentralization of identity storage</a></h4>
+<p>With Litentry the User's data, including identity credential, are stored in a anonymous encrypted decentralized storage, instead of the central data server of the service provider, currently we support IPFS, in the future we will have other storage support like Arwaeve or Litentry native on-chain key-value store.</p>
+<h4 id="decentralization-of-identity-authentication"><a class="header" href="#decentralization-of-identity-authentication">Decentralization of identity authentication</a></h4>
+<!-- <mark> The identity validator connect to the decentralized network periodically, and it could validate the authentication request independently. *I have no idea what this is saying. </mark>--> When user requires an authentication, he needs to submit an authentication request transaction. The identity validator listens to the authentication request event from the Litentry Mainnet. Then it provides validation for the authentication request. 
+<h4 id="decentralization-of-identity-relationships"><a class="header" href="#decentralization-of-identity-relationships">Decentralization of identity relationships</a></h4>
+<p>The relationship of user's data stored in an external storage, and the identity associated with it is validated with cryptographic calculation, and is recorded in the decentralized network instead of regular centralized service like Certificate Authority used in HTTPS protocol. The owner (real person) may have different identities and the different identities belonging to owner are not discoverable in any of the data, and protected by Schnorr25519 Algorithm. In a similar way to which your public and private keys of a wallet are related but your private key is not discoverable from you public key.</p>
+<h4 id="decentralization-of-identity-data-allocation"><a class="header" href="#decentralization-of-identity-data-allocation">Decentralization of Identity Data Allocation</a></h4>
+<p>The user data generated when using third party applications/services is processed by the resolver function on Litentry Network, thus providing the user with trustworthy data, from various sources. As such users are able to get and store valuable user profile like health info, shopping history, etc.</p>
+<h2 id="definitions"><a class="header" href="#definitions">Definitions</a></h2>
+<h4 id="user"><a class="header" href="#user">User</a></h4>
+<p>The user is the origionator of the data, it is a person who owns one or more identities or IoT devices.</p>
+<h4 id="identity"><a class="header" href="#identity">Identity</a></h4>
+<p>It is a generalized concept of identity, not only includes the identity of a person, but also the identity of anything tht could generate claims like an IoT device. A person could own multiple identities, like an identity that only related to their music preferences, an identity only for data in Germany, or an identity as a game player in a specific game or accross many games. The identity is the reference to its related external user data, the id by itself does not have any meaning other than the linking of the user with the external user data.</p>
+<h4 id="external-data"><a class="header" href="#external-data">External Data</a></h4>
+<p>Data generated when using the applications/services like the shopping history when a user is shopping in e-store. This external user data is associated with a particular user identity. <!-- <mark>, or the age data read from the aforementioned age proving request.</mark> --></p>
+<h4 id="authorization-token"><a class="header" href="#authorization-token">Authorization Token</a></h4>
+<!--<mark>A piece of data that proves the read or write permission to identity’s external data. Like the permission to read the age data of a person.</mark> just delete this sentence -->
+<p>The authorization token is a cryptographic proof that the holder of the token has permission to read and/or write external data for the related identity. This is similar to an authorisation token that would give permission to do a transaction from your crypto wallet.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="protocol"><a class="header" href="#protocol">Protocol</a></h1>
+<h3 id="concept-of-decentralization-1"><a class="header" href="#concept-of-decentralization-1">Concept of Decentralization</a></h3>
+<p>The decentralization of Litentry includes following aspects:</p>
+<ul>
+<li>
+<p><code>Decentralization of identity storage</code>: User data, including identity credential, should be storage in the user's owned devices, instead of the central data server of a service provider.</p>
+</li>
+<li>
+<p><code>Dentralization of idenity authentication</code>: The identity validator is connected to the decentralized network, and it validates the authentication request independently.</p>
+</li>
+<li>
+<p><code>Decentralization of identity ownership</code>: The relationship of data, person, and identity is validated with a cryptographic calculation, and it is also record in the decentralized network instead of centralized service like Certificate Authority using in HTTPS.</p>
+</li>
+<li>
+<p><code>Decentralization of Identity Data Allocating</code>: When users use third-party applications/services, they are producing a lot of valuable data. And those data will be collected and processed by the resolver function on the Litentry Network, which further will deliver value for the users. Such as users can create valuable profiles like health info, shopping history, etc. <!-- <mark>this provider uses trustworthy data.*I am not sure what this is trying to say*</mark>  --></p>
+</li>
+</ul>
+<h3 id="definitions-1"><a class="header" href="#definitions-1">Definitions</a></h3>
+<ul>
+<li><code>User</code>: The originator of the data, the person who owns one or more identities or IoT devices.</li>
+<li><code>Identity</code>: It is a generalized concept of identity, not only include the identity of person, but also any thing could generate claims like an IoT devices. A person could own multiple identities, like an identity in Germany, an identity as E-Resident in Estonia, or an identity as an game player.</li>
+<li><code>Authorization</code>: It is a piece of data or a token that could proves a users ownership to a capability or a real world thing. Authorization could be the permission to read the age data of a person, or the ownership of a 3D printer on a certain day.</li>
+<li><code>External Data</code>: It is the data generated when using an applications/services, like the shopping history when a user shopping in e-store, or the age data read from the aforementioned age proving request.</li>
+</ul>
+<h3 id="network-interoperability"><a class="header" href="#network-interoperability">Network Interoperability</a></h3>
+<p>Based on Substrate Network, Litentry aims to become a fundamental part in the Web3 infrastructure.</p>
+<p>// TODO</p>
+<ul>
+<li><code>Network Layer</code>: Polkadot is here to connect different blockchains</li>
+<li><code>Runtime Layer</code>: The Litentry Pallet could be used for other Substrate network builders.</li>
+<li><code>Application Layer</code>: Small business could build smart contract on Litentry network.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="token-economy"><a class="header" href="#token-economy">Token Economy</a></h1>
+<h2 id="economy-participants"><a class="header" href="#economy-participants">Economy Participants</a></h2>
+<h4 id="identity-staker"><a class="header" href="#identity-staker">Identity Staker:</a></h4>
+<p>The users who has an identity recorded on chain, and has chosen to stake their identity and its related data into an identities mining pool.</p>
+<h4 id="identity-validator"><a class="header" href="#identity-validator">Identity Validator:</a></h4>
+<!-- <mark>After the staking identity of identity staker is confirmed on chain, he will become identity validator for the next few blocks. *no idea what this means*</mark>--> The identity validator is responsible for checking the correctness and completeness of the data from identity stakers.
+<h4 id="external-storage"><a class="header" href="#external-storage">External Storage:</a></h4>
+<p>A decentralized storage records all the related external data of the identity (Currently only IPFS, in the future we may add more database support)</p>
+<h4 id="identity-staking-data"><a class="header" href="#identity-staking-data">Identity Staking Data</a></h4>
+<p>The data that is staked in a mining pool for a particular identity that has chosen to stake their associated data.</p>
+<h4 id="node"><a class="header" href="#node">Node:</a></h4>
+<p>The node maintains the integrity of the network, the nodes task is firstly to record the state of the network <!-- <mark>*onchain?*</mark> Here network means Litentry blockchain network-->, and secondly to respond to data matching queries by sending data access requests to the external storage and using off-chain workers to validate the validity of the identity staking data.</p>
+<h4 id="data-demander"><a class="header" href="#data-demander">Data Demander:</a></h4>
+<!--An entity has either one of the following two types of requirement is data demander <mark>: Arbitrary identity data: request a matching identity (list) according to the types/requirement data of certain identity: in this case, the buyer will need an authorization token from the identity. *I cannot work out what two requirements that the data buyer has*</mark> I will correct these sentences. --> A data demander is a data consumer in the Litentry network. He retrieves specific data according to the criteria he needs. After the aggregation engine matches the data demander and provider, the demander needs an authorization token from the identity provider.
+<h4 id="data-origin-data-generator"><a class="header" href="#data-origin-data-generator">Data Origin (Data Generator):</a></h4>
+<p>there are three types of data origin:</p>
+<ol>
+<li>Decentralized services/apps generate data when user interact with the dapp. This data is signed by the data generator.</li>
+<li>Traditional services/apps may offer data migration services in this case the data may be signed or not. If it is signed and the data generator is registered on the Litentry network, the data generator also benefits <!-- <mark>(benefits how? financially?)</mark> the generator will receive incentive token as reward--> from data queries.</li>
+<li>User generate the data by his own.</li>
+</ol>
+<h2 id="identity-staking-process"><a class="header" href="#identity-staking-process">Identity Staking Process</a></h2>
+<h4 id="identity-preparation"><a class="header" href="#identity-preparation">Identity Preparation:</a></h4>
+<p>An identity staker who wants to stake their identity into the identity staking pool first needs to have the required data type and format attached to this identity, and the data must be stored correctly in the External Storage.</p>
+<h4 id="identity-data-picking"><a class="header" href="#identity-data-picking">Identity Data Picking:</a></h4>
+<p>Then the user chose which kind of the data he want to staked into the pool, only the picked type will be available for data matching, also the more data he chose, the more benefits he get, staker will need also pay a validation fee to the network and a basic staking deposit.</p>
+<h4 id="staking-identity-validation"><a class="header" href="#staking-identity-validation">Staking Identity Validation:</a></h4>
+<p>The data will be sent to random selected identity validator on the network. The selected identity validator will try to prove wether the data is correct or not.</p>
+<!-- <mark>*I am guessing that the randomly selected validator can reject or accept the data before it is sent to the remaining validators?* </mark> correct-->There are three possibilities:
+<ul>
+<li>If any one of the validators reject the data, the staking process fails, and part of the staking fee will be returned and the validator will not be paid.</li>
+<li>If all validators validate the data then identity with authorized data will be placed into the relevant identity pool, a validation fee is paid to validator.</li>
+<li>Same as above, if all validators validate the data then identity with authorized data will be placed into the relevant identity pool. But if in the next 30 block any malicious data is found for this identity, a part of reward of all the approving validators will be slashed, this slashing amount is decided by the existing blocks number (in this case, 30) of the existing malicious data.</li>
+</ul>
+<h4 id="staking-identity-finalization"><a class="header" href="#staking-identity-finalization">Staking Identity Finalization:</a></h4>
+<p>The value of the identity data will be judged by its completeness and the requirements from data demander. <!--<mark>No identity data is stored, afterward each block *I cannot work out what this is saying*</mark> --> After the data from the identity staker is accepted, the identity staker will receive rewards, and the reward is bound to the staking identity until it retires from the identities pool. The value of the data being staked is quantified, and the staker will earn staking rewards in proportion to the value of the data staked.</p>
+<h4 id="staking-identity-retirement"><a class="header" href="#staking-identity-retirement">Staking Identity Retirement:</a></h4>
+<p>After certain block, the identity will be retired from the identities pool, after that, the rewards bound to the identity and the deposit will be released. User could choose to update the identity data and then restake it to earn further rewards.</p>
+<h2 id="identity-query-process"><a class="header" href="#identity-query-process">Identity Query Process</a></h2>
+<p>According to the different data type required by data buyer. There are two types of query</p>
+<h3 id="1-matching-query"><a class="header" href="#1-matching-query">1. Matching Query</a></h3>
+<h4 id="data-matching-request"><a class="header" href="#data-matching-request">Data Matching Request:</a></h4>
+<p>Data buyer submits a request for data with a selected data type and criteria thsi is called a matching query.</p>
+<h4 id="data-matching-pre-making"><a class="header" href="#data-matching-pre-making">Data Matching Pre-Making:</a></h4>
+<p>The Off-chain worker in the network will now start to generate a list with randomly selected identities that have the required type of data. The length of the list is decided by the fees the data buyer selected to pay, the more data the buyer pays for, the bigger the list. The on-chain randomness makes sure that each time the result list will be different, thus incentivising the data buyer to make multiple queries.<!-- <mark>*I am not sure if my interpretation of this is correct*</mark> correct. --></p>
+<h4 id="data-selection"><a class="header" href="#data-selection">Data Selection:</a></h4>
+<p>The selected list of identities is sent to the external storage. The data is aggregaed and sent back to the network and received by an off-chain worker. The off-chain worker will use the selection algorithms to get the most suitable identity data for the buyer. This data is then sent back to the buyer. The match winner will get the most of the fee paid by the buyer, others fee goes to the others in the list and data origin <!-- <mark>*I got totally lost here not sure who the match winner is*</mark> the Litentry offchain worker will match the demander and provider. Then the staker validotrs are responded to validate the data.-->. Litentry will earn a small part of the fees paid.</p>
+<h3 id="2-target-identity-query"><a class="header" href="#2-target-identity-query">2. Target Identity Query</a></h3>
+<h4 id="identity-data-request"><a class="header" href="#identity-data-request">Identity Data Request:</a></h4>
+<p>Data buyer submits a request for specific data associated with a specified identity (the data staked for a specific person). The query must include the matching data type required and the identity id of the relevant identity staker. For user security the query must include an authorization token signed by the identity owner.</p>
+<h4 id="request-validation"><a class="header" href="#request-validation">Request Validation:</a></h4>
+<p><mark>A</mark>node in the network will check the authorization token issuer, receiver, and validate the block number. From this the node will validate the request.</p>
+<h4 id="request-finalization"><a class="header" href="#request-finalization">Request Finalization:</a></h4>
+<p>Once the node has validated the request a data request event is triggered, the off-chain worker starts to request the specified data from external storage, once the data is received, it is sent as an http request back to the data buyer. A fee is paid to the identity owner <!--<mark>and its related data origin *I have no idea what the related data origin is*</mark> just delete the related data origin-->, and Litentry will earn a small administration fee.</p>
+<h2 id="incentivization"><a class="header" href="#incentivization">Incentivization</a></h2>
+<p>Basics: LIT is the native token of Litentry Network, each block the network will give a fixed block reward to all identity stakers in the identity staking pool. In the staking finalization process, the value of the staking identity data will have been quantified. The block reward will be distributed to identity stakers in accordance to this quantified identity staking value.</p>
+<h4 id="for-identity-staker"><a class="header" href="#for-identity-staker">For Identity Staker:</a></h4>
+<p>Identity stakers earn profits from two parts,</p>
+<ol>
+<li>Block Reward: Once staker data is accepted into the identity staking pool, the Identity Staker will get the reward for each block.</li>
+<li>Matching Fee: When the matching query with staked identity succeeds, the owner will get paid. In the early stages, where there are not many matching requests, the identity staker will mostly benefits from block reward. When the network gets more data buyers and becomes mature, the share of matching fee will more evenly distributed to the high quality identity staker. Thus in the long term an identity staker’s main benefit will be the matching fee thus incentivising an identity staker to stake the highest quality data possible.</li>
+</ol>
+<h4 id="for-identity-validator"><a class="header" href="#for-identity-validator">For Identity Validator</a></h4>
+<p>Users are motivated to run an Identity Validator because it is part of the responsibility to validate the correctness of the data. If the identity validator proves the data, it will get rewarded once the data is used since the validator has proved the correctness and completeness of the data.<!-- <mark>*I almost get what is being said here but I think I still have a confusion between the identity validator and the identity staker. It almost feels like these are being considered to be one by Litentry but in my model I still see them as different.*</mark> the identity staker is the data provider, and the identity validator are people who checks the correctness and completeness of the data from identity stakers.--></p>
+<h4 id="for-dapp-as-data-provider"><a class="header" href="#for-dapp-as-data-provider">For Dapp as Data Provider</a></h4>
+<p>Explicit benefits are the grants from Litentry Foundation; each success data matching will pay the fee back to the Dapp or Data Provider. Implicit benefits are a new way to attract new users for their Dapp since users could harvest their data and be glad to use their services. <!-- <mark>*I would need to understand this better*</mark> --></p>
+<h4 id="for-node"><a class="header" href="#for-node">For Node</a></h4>
+<p>As the network maintainer, a node will get native token reward (LIT) from the Litentry network.</p>
+<h4 id="for-external-storage"><a class="header" href="#for-external-storage">For External Storage</a></h4>
+<p>The fee that the identity staker pays when they stake is used to pay storage fee to the external storage for their data. This matches the decentralised external storage business model perfectly and they are therfore willing to provide their services to Litentry network.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="architecture"><a class="header" href="#architecture">Architecture</a></h1>
+<h3 id="the-protocol-is-mainly-constructed-with-following-parts"><a class="header" href="#the-protocol-is-mainly-constructed-with-following-parts">The protocol is mainly constructed with following parts:</a></h3>
+<ul>
+<li><a href="introduction/../runtime/runtime.html">Litentry Runtime</a></li>
+<li><a href="introduction/../mobile-app/mobile-app.html">Litentry Authenticator Mobile App</a></li>
+<li><a href="introduction/../web-app/web-app.html">Litentry DApp Playground</a></li>
+<li><a href="introduction/../">Litenry IPFS Data Center</a></li>
+<li><a href="introduction/../sdk/sdk.html">Litentry SDK</a></li>
+<li><a href="introduction/../api/api.html">Litentry GraphQL Caching Server</a></li>
+</ul>
+<p><img src="introduction/./design.png" alt="API Design" /></p>
+<p><mark>Other than web 2.0 architectures, we are suppose to build a decentralized ecosystem with Blockchain as backend services than cloud or single node server.</mark></p>
+<h3 id="runtime"><a class="header" href="#runtime">Runtime</a></h3>
+<p>Litentry Runtime is built with Substrate, as such it inherits leading edge blockchain technologies.</p>
+<p>We use offchain worker to fetch identity related data, and this data does not need to be stored centrally but on the user's client or a decentralized storage. Thus remove the uncertain and privacy issue by the client side applications.<!-- <mark>*I am not sure what you are trying to say here*</mark> --></p>
+<p>We aim to be one of the first Parachains on the Polkadot <mark>and Kusama</mark> Network. As such we will benefit from this thriving cross-chain ecosystem.</p>
+<h3 id="user-side"><a class="header" href="#user-side">User Side</a></h3>
+<p>The user has full control of their identity data, the data generated from Apps and the flows to their decentralized storage like IPFS or Arweave. <mark>The user's true identity is anonymous, cryptographic separated. &lt;!-- <!-- *Is this what you are trying to say* --> --&gt;</mark></p>
+<h4 id="litentry-authenticator"><a class="header" href="#litentry-authenticator">Litentry Authenticator</a></h4>
+<p><mark>On user side we have Litentry Authenticator as user's mobile data hub.</p>
+<p>Personal users would like to use an application to manage all its identities, it could also become a Hub connected to different interest IoT devices. For example, directly buying the authorization or the data from other IoT devices. With the advantage of GPS of mobile phone, it could further integrate with LBS (Location Based Services).</p>
+<p>In order to work in a fully decentralized scenario, itself also need to integrate a cold wallet, where could keep a user's private key in a secure environment provided by Android or iOS.<!-- *I would need to chat to someone to figure out what this is saying*  I can not understand this as well. Actually we have stopped developing the Litentry Authenticator, maybe we can simply remove this section.^^ --></mark></p>
+<h4 id="dapps-build-with-litentry-protocol"><a class="header" href="#dapps-build-with-litentry-protocol">DApps build with Litentry Protocol</a></h4>
+<p>With Litentry SDK, developers could easily build fully decentralized Apps or Services. User could directly signin without password and without registration. Simply with a Cryptographic QR code. Once signed on the App would use IPFS, Arweave or even on-chain key value database for storing user data, instead of storing data on their own centralised backend server.</p>
+<p>By doing this we are converting an app-centric internet to a user-centric one.</p>
+<h4 id="litentry-ipfs-data-center"><a class="header" href="#litentry-ipfs-data-center">Litentry IPFS Data Center</a></h4>
+<p>Litentry uses OrbitDB to offer an IPFS database support. In the Data Center, user may check their identity related data and tokens.</p>
+<p>In the future we will implement Arweave and on-Chain key value storage.</p>
+<h3 id="middleware-layer"><a class="header" href="#middleware-layer">Middleware Layer</a></h3>
+<p>It mainly includes:</p>
+<ul>
+<li>
+<p>Event listener and off-chain caching server:  With cached data the query load on the blockchain is dramatically reduced, furthermore, it saves the caching data on a centralized database in order to improve the speed of application-based blockchain query, like Infura for Ethereum. A relay script server is also built here, to automatically trigger an event <mark> periodically regarding block generation.<!-- *I am not entirely sure what this sentence is trying to say* I guess, the relay script server will throw out event periodically based on the block time --></mark></p>
+</li>
+<li>
+<p>GraphQL caching server: Since IPFS is still under testing, we currently use graphql caching server to improve user experience for syncing the data, it is also caching anonymous data, and improve data query speed.</p>
+</li>
+<li>
+<p>Validation and query server: validate the authorization tokens with HTTPS request for IoT devices or application.</p>
+</li>
+<li>
+<p>Client side SDK library: The javascript binding library will directly connect the front-end applications with Blockchain, for example, React or React Native applications.</p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="privacy-data-feeding-and-protection"><a class="header" href="#privacy-data-feeding-and-protection">Privacy data feeding and protection</a></h1>
+<p>The legacy verification process has many problems with regards to the privacy of data generation as an example</p>
+<ol>
+<li>
+<p>If a user come to Hotel with his digital key (claim). The smart lock itself could generate data, and each time the user entered the room, this data is generated, but they are harvested by the hotel, and never reach to user.</p>
+</li>
+<li>
+<p><match>The Data generated are combined with user's accountID (public address), when these authorizations (claims) be more enough, it will be practical for the external companies to monitor the on-chain state, and build user profile.</match></p>
+</li>
+</ol>
+<p>To resolve this problem, and let the user get their data, we have designed our new method based on Substrate offline worker and crypto algorithms based on Schnorr25519.</p>
+<ol>
+<li>
+<p>To protect user's data, we migrate the data generation process on to Substrate, after the verification process, the crucial arguments like user address, verifier, time, token hash will be send into blockchain with a <code>verifier</code> extrinsic. Which is independent with off-line verification, thus it will not affect the verification time. Then the data will be generated in offchain worker, generate access token to user's storage, and then feed the data back to user.</p>
+</li>
+<li>
+<p>To protect the user data, we will use HDKD feature to periodically generate new soft derivated key pairs for certain user. Verifier can prove that the address belongs to the parent keypairs using crypto algorithms. Thus user will not need to always show only the one public address. Another key point is to use ring signature, which will hide user's signature <match>behind bunch of people.</match>   Child address generation feature is already implemented in our crypto wallet and Ring signature is our current experiment direction.</p>
+</li>
+</ol>
+<p>The workflow of user data feed could be seen in the following diagram</p>
+<p><img src="introduction/./dataFeed.png" alt="User Data Feed Diagram" /></p>
+<p>Related Article about Off-Chain Worker: <a href="https://www.parity.io/substrate-off-chain-workers-secure-and-efficient-computing-intensive-tasks/">https://www.parity.io/substrate-off-chain-workers-secure-and-efficient-computing-intensive-tasks/</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="runtime-1"><a class="header" href="#runtime-1">Runtime</a></h1>
+<p>Github Repository: <a href="https://github.com/litentry/litentry-node">https://github.com/litentry/litentry-node</a></p>
+<p>There are two pallets from litentry both account-linker and offchain-worker.</p>
+<!--- <mark>*Neither of these pallets exist on this path*</mark> The account-linker and offchain-worker are moved to the Litnetry pallets repo -->
+<p><a href="https://github.com/litentry/litentry-pallets/blob/dev/pallets/account-linker/src/lib.rs">https://github.com/litentry/litentry-pallets/blob/dev/pallets/account-linker/src/lib.rs</a></p>
+<p><a href="https://github.com/litentry/litentry-pallets/blob/dev/pallets/offchain-worker/src/lib.rs">https://github.com/litentry/litentry-pallets/blob/dev/pallets/offchain-worker/src/lib.rs</a></p>
+<h3 id="abstract"><a class="header" href="#abstract">Abstract</a></h3>
+<p>The identity runtime protocol links all the cross chain accounts to make an unique Litentry Identity. After the accounts are linked, the Litentry user can trigger the asset claim via a transaction. The Litentry offchain worker will query your assets in the other blockchain network and generate asset proofs on-chain. Any Defi or other Dapp can then use this information for their service:</p>
+<ol>
+<li>
+<p>Account Linking: Litentry user signs the specific data with their private key.</p>
+</li>
+<li>
+<p>Asset Claim: Litentry user asks Litentry runtime to query its assets and generate a proof.</p>
+</li>
+<li>
+<p>Defi or other Dapp: Use the Litentry ID and its assets proof for their service.</p>
+</li>
+</ol>
+<h3 id="stakeholders"><a class="header" href="#stakeholders">Stakeholders</a></h3>
+<ol>
+<li>Litentry user: Users register with the Litentry network, they can get the token incentive if their data is queried by a DeFi or other Dapps. Their information is protected with encryption and used in a secure runtime environment.</li>
+<li>Defi: With Litentry identity, users can view their personal information, including credit and on-chain reputation. This information can be applied to mortgage rates and credit borrowing in DeFi lending.<!-- <mark>*I have no idea what this is saying*</mark> update the content--></li>
+<li>Dapps: Litentry user's cross chain information includes all activities in the whole cryptocurrency world. Litentry is the unique and unified entry point for their service.</li>
+<li>Litentry node runner: They will earn the block production incentive and they can run offchain workers for cross chain asset query service. They will be rewarded if the query results they submit are correct.</li>
+</ol>
+<h3 id="scenario"><a class="header" href="#scenario">Scenario:</a></h3>
+<h5 id="defi"><a class="header" href="#defi">Defi:</a></h5>
+<p>Litentry can be used to provide a full credit history for a user. This credit history can be used in a Defi application or service for borrowing. By using credit histories, a full access to the users history and their assets a lending application can lend money with less collateral thus reducing the need for the current scenario where extremely overcollateralised loans are given. This would work as follows.</p>
+<ul>
+<li>
+<p>Asset claim: If Litentry user also owns assets in Bitcoin and Ethereum, they can link their account from Bitcoin and Ethereum. Then they request Litentry to query their balance and create asset proofs;</p>
+</li>
+<li>
+<p>Defi service: Litentry provides the SDK and API for Defi application. The Defi service can access Litentries ID and asset proofs, based on this information, the service can use this data in their algorithmic model. Based on the above data they can decide on an appropriate loan amount, interest rate and credit score.</p>
+</li>
+</ul>
+<h5 id="cross-chain-identity"><a class="header" href="#cross-chain-identity">Cross Chain Identity:</a></h5>
+<p>Litentry data and account aggregation service can help Dapp developers to avoid having to implement API calls to numerous BlockChain networks.</p>
+<h5 id="smart-contract-with-credit-score-algorithm"><a class="header" href="#smart-contract-with-credit-score-algorithm">Smart contract with credit score algorithm:</a></h5>
+<p>Lite entry supports smart contracts being built and deployed in the Litentry network. Different smart contracts can use different algorithms to compute the credit score. The Dapps being built for Defi can use one or more of these smart contracts to get their client's financial profile and credit rating.</p>
+<h2 id="in-the-future"><a class="header" href="#in-the-future">In the future</a></h2>
+<p>The Litentry runtime is under very active development now. More pallets will be implemented and integrated into Litentry runtiime. Litentry network will acquire the slot of both Kusama and Polkadot. Cross chain ID aggregation and query will be realized.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chain-state-storage"><a class="header" href="#chain-state-storage">Chain State Storage</a></h1>
+<h4 id="identity-related"><a class="header" href="#identity-related">Identity Related</a></h4>
+<pre><code class="language-rust ignore">Identities: T::Hash =&gt; IdentityOf&lt;T&gt;;
+IdentityOwner: T::Hash =&gt; Option&lt;T::AccountId&gt;;
+
+IdentitiesCount: u64;
+IdentitiesArray: u64 =&gt; T::Hash;
+IdentitiesIndex: T::Hash =&gt; u64;
+
+OwnedIdentitiesCount: T::AccountId =&gt; u64;
+OwnedIdentitiesArray: (T::AccountId, u64) =&gt; T::Hash;
+OwnedIdentitiesIndex: T::Hash =&gt; u64;
+</code></pre>
+<h4 id="token-related"><a class="header" href="#token-related">Token Related</a></h4>
+<pre><code class="language-rust ignore">AuthorizedTokens: T::Hash =&gt; AuthorizedTokenOf&lt;T&gt;;
+AuthorizedTokenOwner: T::Hash =&gt; Option&lt;T::AccountId&gt;;
+AuthorizedTokenIdentity: T::Hash =&gt; Option&lt;T::Hash&gt;;
+
+AuthorizedTokensCount: u64;
+AuthorizedTokensArray: u64 =&gt; T::Hash;
+AuthorizedTokensIndex: T::Hash =&gt; u64;
+
+OwnedAuthorizedTokensCount: T::AccountId =&gt; u64;
+OwnedAuthorizedTokensArray: (T::AccountId, u64) =&gt; T::Hash;
+OwnedAuthorizedTokensIndex: T::Hash =&gt; u64;
+
+IdentityAuthorizedTokensCount: T::Hash =&gt; u64;
+IdentityAuthorizedTokensArray: (T::Hash, u64) =&gt; T::Hash;
+IdentityAuthorizedTokensIndex: T::Hash =&gt; u64;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="extrinsic"><a class="header" href="#extrinsic">Extrinsic</a></h1>
+<h4 id="issuetoken"><a class="header" href="#issuetoken">issueToken</a></h4>
+<pre><code class="language-rust ignore">fn issueToken(to, identity_id, cost, data, datatype, expired)
+</code></pre>
+<p>Issue a token of an owned identity to certain account.</p>
+<ul>
+<li><code>to</code>: Hash, the receiver identity id</li>
+<li><code>identity_id</code>: Hash, the issuer identity id </li>
+<li><code>cost</code>: Balance, the transfer cost of the token</li>
+<li><code>data</code>: byte, The data stored in the token</li>
+<li><code>data_type</code>: byte, the type of the data represent in byte</li>
+<li><code>expired</code>: byte, which define the expired date of the token</li>
+</ul>
+<h4 id="registeridentity"><a class="header" href="#registeridentity">registerIdentity</a></h4>
+<pre><code class="language-rust ignore">fn registerIdentity()
+</code></pre>
+<p>Register a new identity for this account.</p>
+<h4 id="registeridentitywithid"><a class="header" href="#registeridentitywithid">registerIdentityWithId</a></h4>
+<pre><code class="language-rust ignore">fn registerIdentityWithId(identity_id)
+</code></pre>
+<p>Register a new Identity with existed identifier as Identity ID, this is useful when register a third party devices or services. For example, a user buy a new IoT camera, there could already exist a identifier on the back of device reserved for the buyer.</p>
+<ul>
+<li><code>identity_id</code>: Hash, the identifier to be used as identity ID</li>
+</ul>
+<h4 id="transfertoken"><a class="header" href="#transfertoken">transferToken</a></h4>
+<pre><code class="language-rust ignore">fn transferToken(to, token_id)
+</code></pre>
+<p>Transfer a owned token to another account</p>
+<ul>
+<li><code>to</code>: AccountId, the future owner of the token</li>
+<li><code>token_id</code>: Hash, the ID of the transferred token</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="types"><a class="header" href="#types">Types</a></h1>
+<pre><code class="language-json">{
+  &quot;Address&quot;: &quot;AccountId&quot;,
+  &quot;LookupSource&quot;: &quot;AccountId&quot;,
+  &quot;IdentityOf&quot;: {
+    &quot;id&quot;: &quot;Hash&quot;
+  },
+  &quot;AuthorizedTokenOf&quot;: {
+    &quot;id&quot;: &quot;Hash&quot;,
+    &quot;cost&quot;: &quot;Balance&quot;,
+    &quot;data&quot;: &quot;u64&quot;,
+    &quot;datatype&quot;: &quot;u64&quot;,
+    &quot;expired&quot;: &quot;u64&quot;
+  }
+}
+</code></pre>
+<p>When using with Polkadot.js App you will need to add the above Litentry's types so it can encode and decode the extrinsic correctly, copy the following code to the text field on &quot;developer&quot; tabs: https://polkadot.js.org/apps//#/settings/developer .</p>
+<p><img src="api/./useWithAPI.png" alt="Example on Overwrite Types on Polkadot Apps" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="authentication-mobile-app"><a class="header" href="#authentication-mobile-app">Authentication Mobile App</a></h1>
+<p>Github Repository: <a href="https://github.com/litentry/litentry-authenticator">https://github.com/litentry/litentry-authenticator</a></p>
+<p>Download Litentry Authenticator v1.1.1 from <a href="https://play.google.com/store/apps/details?id=com.litentryauthenticator">Android App Store</a></p>
+<h3 id="mobile-app-abstract"><a class="header" href="#mobile-app-abstract">Mobile App Abstract</a></h3>
+<p>Litentry users can use a Wallet Application to manage all their identities, it could also become a Hub connected to different IoT devices that they are interested in. For example, the user could directly buy the authorization or the data from IoT devices. With the advantage of GPS of mobile phone, it could further integrate with LBS (Location Based Services).</p>
+<p>In order to work in a fully decentralized scenario, the mobile app itself needs to integrate a light client, where a user's private key can be stored in a secure environment provided by Android or iOS.</p>
+<h3 id="mobile-application-screenshots"><a class="header" href="#mobile-application-screenshots">Mobile Application Screenshots:</a></h3>
+<p>For the step to step guide on use Litentry Authenticator please refer to <a href="https://www.litentry.com/post/play-litentry-dapps-with-ipfs-part-1">this article</a>.</p>
+<h4 id="recover-seed-and-manage-account"><a class="header" href="#recover-seed-and-manage-account">Recover Seed and Manage Account</a></h4>
+<p><img src="mobile-app/./app1.png" alt="Identity and Token Creation Example" /></p>
+<h4 id="register-identity-and-2fa-authentication"><a class="header" href="#register-identity-and-2fa-authentication">Register Identity and 2FA Authentication</a></h4>
+<p><img src="mobile-app/./app2.png" alt="Register Identity" /></p>
+<h4 id="check-token-related-data"><a class="header" href="#check-token-related-data">Check Token Related Data</a></h4>
+<p><img src="mobile-app/./app3.png" alt="Check Token Data" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="litentry-sdk"><a class="header" href="#litentry-sdk">Litentry SDK</a></h1>
+<p>Github Repository: <a href="https://github.com/litentry/litentry-sdk">https://github.com/litentry/litentry-sdk</a></p>
+<p>This library provides useful functions to interact with the state on Litentry and user identity data related IPFS Storage.</p>
+<p>It helps developer to build client side decentralized applications</p>
+<h2 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h2>
+<pre><code class="language-ignore">yarn add litentry-sdk
+</code></pre>
+<p>Import litentry-sdk to start using it, SDK mainly includes three part, <code>hooks</code>, <code>query</code> and <code>ipfsApi</code></p>
+<pre><code class="language-typescript">import {hooks, query, ipfsApi} from 'litentry-sdk';
+</code></pre>
+<h2 id="react-hooks-for-litentry"><a class="header" href="#react-hooks-for-litentry">React Hooks for Litentry</a></h2>
+<pre><code class="language-typescript ignore">//Api loading State
+hooks.useApi(): boolean
+
+//Get Identities, use updatedIndex to force refresh
+hooks.useIdentities(account: string, updateIndex: number): string[]
+
+//Get Identity current owned tokens
+hooks.useTokens(identityHash: string): string[]
+
+//Get the owner of the token 
+hooks.useTokenOwner(tokenHash: string): string
+
+//Get account balance of LTT 
+hooks.useBalance(account: string): string
+
+//Help async function for query issuer Identity of the token
+hooks.getTokenIdentity(tokenHash: string): Promise&lt;string&gt;]
+
+//Help async function for getting the last issued identity
+hooks.getLastIdentity(account: string): Promise&lt;string | void&gt;
+
+// react hooks for using native extrinsics on Litentry
+hooks.useExtrinsics(): {
+	registerIdentity: SubmittableExtrinsicFunction&lt;'promise'&gt;;
+	issueToken: SubmittableExtrinsicFunction&lt;'promise'&gt;;
+}
+
+</code></pre>
+<h2 id="identity-data-query"><a class="header" href="#identity-data-query">Identity Data Query</a></h2>
+<p>Identity data is stored in the IPFS network and cached in Litentry GraphQL data server.</p>
+<p>These are the functions to query the latest data on IPFS:</p>
+<pre><code class="language-typescript">ipfsApi.getAddress(identity: string): Promise&lt;string | null&gt;
+
+ipfsApi.getData(identityId: string): Promise&lt;string[]&gt;
+
+ipfsApi.registerIdentity(identity: string): void
+</code></pre>
+<p>and the functions to construct query http request from GraphQL:</p>
+<pre><code class="language-typescript">query.getData(identity: string): string
+
+query.setData(identity: string, data: string): string
+
+query.method(methodName: string, identity: string): string 
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="litentry-dapp-playground"><a class="header" href="#litentry-dapp-playground">Litentry DApp Playground</a></h1>
+<p>live site on <a href="https://dapp.litentry.com/">https://dapp.litentry.com/</a></p>
+<!--- <mark>I could not use the Dapp - the guide returned a 404 error and the QRCode did not show in the Sign in form. The litentry data center, litentry authenticator and litentry graphql links all returned errors as well</mark> -->
+<p>Repository: <a href="https://github.com/litentry/litentry-web">https://github.com/litentry/litentry-web</a>.</p>
+<p>For more information on how to start with Litentry DApp Playground please refer to <a href="https://www.litentry.com/post/play-litentry-dapps-with-ipfs-part-1">this article</a>.<!--- <mark>This article does not exist at this link</mark> --></p>
+<p>Litentry Playground is a hub for decentralized web app applications to achieve Substrate based authentication.</p>
+<p>User use Dapps with Litentry decentralized 2FA mobile App. This allows users to use Dapps without registration, passwords and no App migration barriers.</p>
+<p>More about the Authentication (Sign in Process):</p>
+<h4 id="the-object-of-litentry-authentication"><a class="header" href="#the-object-of-litentry-authentication">The Object of Litentry Authentication</a></h4>
+<ul>
+<li>It should allow users to use his/her owned Substrate account related identity to login to a third party website (that supports this login method).</li>
+<li>It should be easy to use and reasonably easy to setup.</li>
+<li>It should not compromise the security of the user's Substrate account.</li>
+<li>It should allow users to recover their credentials in case of loss or theft.</li>
+<li>It should not require knowledge of Cryptography or Blockchain with authentication.</li>
+<li>It should have reasonable latency for a login system.</li>
+<li>It should not cost users gas (or money) to login.</li>
+<li>It should be reasonably easy for developers to implement in their apps.</li>
+</ul>
+<h4 id="the-implementation-of-litentry-authentication"><a class="header" href="#the-implementation-of-litentry-authentication">The Implementation of Litentry Authentication</a></h4>
+<ol>
+<li>User on a third party website and click login with Litentry Button</li>
+<li>A preset account will come if user has logged on with Litentry before in this computer or device, or a QR scanner will come up for user to scan his/her Substrate account QR code.</li>
+<li>At this time the third party website will send a transaction to Litentry network with a challenge string and its receiver server address. <mark>And sign a JWT with challenge and server address embedded in it.</mark></li>
+<li>User now has to open the mobile app <mark>(best integrated with Substrate light client)</mark>. The mobile app has detected the auth request event, the user will authorise the JWT (JSON Web Token)in the mobile application (this signs the transaction using the users private key and then sends the double signed JWT (JSON Web Token) to the server address.</li>
+<li>The server validates the token received from the user and then finishes the logging process.</li>
+<li>After the usage of the third party web application or service, third party allocated the user browsing data/history and query the user's data resolver address, then user data is send back to the resolver and being process and harvested into user's own database.</li>
+</ol>
+<h4 id="sign-in-to-dapp-playground"><a class="header" href="#sign-in-to-dapp-playground">Sign in to DApp Playground</a></h4>
+<p><img src="web-app/./web1.png" alt="Sign in" /></p>
+<h4 id="star-songs-in-dspotify-app"><a class="header" href="#star-songs-in-dspotify-app">Star Songs in dSpotify App</a></h4>
+<p><img src="web-app/./web2.png" alt="star songs" /></p>
+<h4 id="record-mood-with-dtwitter-app"><a class="header" href="#record-mood-with-dtwitter-app">Record mood with dTwitter App</a></h4>
+<p><img src="web-app/./web3.png" alt="record mood" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="litentry-ipfs-data-center-1"><a class="header" href="#litentry-ipfs-data-center-1">Litentry IPFS Data Center</a></h1>
+<p>Github Repository: <a href="https://github.com/litentry/litentry-ipfs-data-center">https://github.com/litentry/litentry-ipfs-data-center</a></p>
+<p>Live Site on <a href="https://data.litentry.com/">https://data.litentry.com/</a></p>
+<p>Litentry uses OrbitDB to offer an IPFS database support. In Data Center, user may check their identity related data and tokens.</p>
+<p>In the future we will implement Arweave and on-Chain key value storage.</p>
+<p><img src="data-server/./dataServer1.png" alt="IPFS Data Server" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="middleware"><a class="header" href="#middleware">Middleware</a></h1>
+<p>Live Server: <a href="https://graphql.litentry.com:4000/playground">https://graphql.litentry.com:4000/playground</a></p>
+<p>Github Repository: <a href="https://github.com/litentry/litentry-ipfs-graphql">https://github.com/litentry/litentry-ipfs-graphql</a></p>
+<p>Currently, we provide a GraphQL caching server for recording event on the Litentry blockchain and caching data from IPFS.</p>
+<p>IPFS is still under testing, graphql caching server could improve user experience for sync the data, it also caching anonymous data, and improve data query speed.</p>
+<p><img src="graphql/./graphql1.png" alt="Graphql Server" /></p>
+<p>Query types</p>
+<pre><code class="language-typescript ignore">  type Record {
+    ${recordKey}: String
+  }
+
+  type Query {
+    registerIdentity(identityId: String): String
+    determineAddress(identityId: String): String
+    addData(identityId: String, data: String): String
+    addDataAddress(address: String, data: String): String
+    getData(identityId: String): [Record]
+  }
+</code></pre>
+<p>Example for query <code>playgroundRecord</code> data of certain identity</p>
+<pre><code class="language-ignore">https://graphql.litentry.com:4000/graphql?query={getData(identityId:&quot;0x992c710c7fba11ccd22a2fbfec1af6ea85d488807e63e10cbbd16256fcf95752&quot;){playgroundRecord}}
+</code></pre>
+<p>query IPFS address of certain identity</p>
+<pre><code class="language-ignore">https://graphql.litentry.com:4000/graphql?query={determineAddress(identityId:&quot;0x992c710c7fba11ccd22a2fbfec1af6ea85d488807e63e10cbbd16256fcf95752&quot;)}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="light-client-services"><a class="header" href="#light-client-services">Light Client Services</a></h1>
+<h3 id="concept"><a class="header" href="#concept">Concept</a></h3>
+<p>Light Client should support all the networks on Substrate, and each of them have a node, so we should not pre-package all the nodes into the App, but support the app to download the most recent binary files and save them into the app. It should have at least “choose network”, “start service”, and “stop service” button. And most of the time it should be running in the background and work as an interface for all the apps to interact with a certain network.</p>
+<p>In addition to giving apps a decentralized feature that talks to the network. An app could register an event, subscribe to an event on the light client service and push notifications to the user. So that the notification does not need to go through Android’s or Apple’s message center. A challenge would be how to always keep the light client app alive, and when the user powered off the phone, the light client would stop receiving messages (a breakpoint resume function could be implemented for the user to get events from the last fetched block).</p>
+<h4 id="android-implementation"><a class="header" href="#android-implementation">Android Implementation</a></h4>
+<p>The binary could successfully be compiled with the guide here and run on an Android Devices.</p>
+<p>To keep the light client always living in the background, we need to use Service, but the policy changes from time to time.</p>
+<p>a minimal implementation: <a href="https://github.com/hanwencheng/LightClientServices">https://github.com/hanwencheng/LightClientServices</a>, which supports users to download the binary of Flaming Fir, and run the service in the background.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="registrar-background"><a class="header" href="#registrar-background">Registrar Background</a></h1>
+<p>Decentralised Identity (DID) consists of a triangle of Trust. The atester (registrar), the credential holder and the verifier. The atester (verifies/atests/judges) that the credentials for the identity are correct. Credentials could be email address, twitter account or any other data that could be used as identity credentials.
+The credential holder is the person, business or IOT device that controls the credentials.
+The verifier is the entity to whom the credentials are being presented.</p>
+<p>As an example if you are wanting to use a dapp or service and they would like to verify that you are identified by your email address and/or twitter account. They could ask for these credentials. As a user wanting to use this service you could choose to hand these credentials over to them. Because the credentials are atested by a trusted attester the verify will accept the presented credentials and allow you to use the Dapp or service.</p>
+<p>Litentry is a registrar in polkadot parlance (an atester in self sovereign identity parlance). This means that Litentry to atest to (issue a judgement) of the validity of your email address, twitter account and your element account. This section covers How to verify your identity with Litentry and the implementation details of Litentry.</p>
+<h2 id="litentry-and-polkadot"><a class="header" href="#litentry-and-polkadot">Litentry and Polkadot</a></h2>
+<p>Polkadot provides a service that allows participants to add personal information such as email addresses and twitter accounts to their on-chain accounts. The user can then ask for verification of this information by a registrar. Litentry is a registrar. A user can request a registrar to make a judgment on their claims. The user can select a fee that they are willing to pay. Registars are accepted via submitting proposals to the democracy process in Polkadot.</p>
+<p>Litentry has been accepted as a Registrar for Kusama.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="how-to-verify-your-identity"><a class="header" href="#how-to-verify-your-identity">How To Verify Your Identity</a></h1>
+<h2 id="introduction-1"><a class="header" href="#introduction-1">Introduction</a></h2>
+<p>While the anonymity Web3 provides has a great advantage in user privacy, revealing partial personal information can help gain a higher reputation and trust in the Polkadot ecosystem. This document introduces a registrar service that is fully automatic, leveraging cryptographical design to eliminate human interventions. Litentry registrar focuses on providing judgment for a user's <code>display name</code>, <code>email</code>, <code>twitter</code>, or <code>element name (previously called riot)</code>while preserving user privacy.</p>
+<p>We will walk through the identity verification process step by step: First, users need to set their identity information on the chain; Second, they may request the registrar to verify the identity. Users will enter a maximum fee they are willing to pay for the service. After that, the dedicated registrar can ascertain.</p>
+<h3 id="step-1-set-an-on-chain-identity"><a class="header" href="#step-1-set-an-on-chain-identity">Step 1: Set an on-chain identity</a></h3>
+<ul>
+<li>Go to the 'Accounts' session on <a href="https://polkadot.js.org/apps">Polkadot-JS Apps</a></li>
+<li>Make sure you're in the Kusama network by looking at the top left of the page. If not, click on the toggle to switch</li>
+<li>On the accounts list, click on the dots icon on the right side of your selected account and click <code>Set on-chain identity</code>.</li>
+</ul>
+<p align="center">
+<img src="registrar/./registrar1.png" alt="litentryRegistrar" width="75%" /></p>
+<p align="center">Figure 1.1  Set on-chain Identity</p>
+<ul>
+<li>You'll see a popup window of 'register identity'. Click to turn on include field of display name , email , twitter , riot(also known as element) and enter your information. Once you finish, click Set Identity to submit the transaction.</li>
+</ul>
+<p align="center">
+<img src="registrar/./registrar2.png" alt="litentryReggistrar" width="60%" /></p>
+<p align="center">Figure 1.2  Submit Identity information</p>
+Now you have successfully submitted an identity! Since your information is not verified yet, you will see a ⚪️ next to your username.
+<p align="center">
+<img src="registrar/./registrar3.png" alt="litentryReggistrar" width="40%" height="40%"/></p>
+<p align="center">Figure 1.3 Unverified Account</p>
+<h3 id="step-2-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmljudgement-requestjudgement-requesta"><a class="header" href="#step-2-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmljudgement-requestjudgement-requesta">Step 2: <a href="https://docs.litentry.com/registrar/HowToVerifyYourIdentity.html#judgement-request">Judgement Request</a></a></h3>
+<p>To request the registrar to validate your on-chain information:</p>
+<ul>
+<li>Go to Developer-&gt;Extrinsic, select your account.</li>
+<li>Select <code>identity</code> under <code>submit the following extrinsic</code>, and <code>requestJudgement(reg_index, max_fee)</code> transaction.</li>
+<li>Enter '4' for <code>reg_index</code>(index of the registrar)</li>
+<li>Enter '0.04' KSM for the service fee.</li>
+<li>Click on <code>Submit transaction</code></li>
+</ul>
+<p align="center">
+<img src="registrar/./registrar5.png" alt="litentryReggistrar" width="75%" /></p>
+<p align="center">Figure 1.4 Judgement Request</p></center>
+<h3 id="step-3-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmlemail-verificationemail-verificationa"><a class="header" href="#step-3-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmlemail-verificationemail-verificationa">Step 3: <a href="https://docs.litentry.com/registrar/HowToVerifyYourIdentity.html#email-verification">Email Verification</a></a></h3>
+<p>You should receive a verification email from Litentry. Click on &quot;Verify Email Now&quot; to complete the verification process (see figure 1.5). After that, you will receive another email that confirms the verification. </p>
+<p align="center">
+<img src="registrar/./email.png" alt="litentryReggistrar" width="50%"/></p>
+<p align="center">Figure 1.5 Email Verification Example</p>
+<h3 id="step-4-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmlelement-verificationelement-verificationa-optional"><a class="header" href="#step-4-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmlelement-verificationelement-verificationa-optional">Step 4: <a href="https://docs.litentry.com/registrar/HowToVerifyYourIdentity.html#element-verification">Element Verification</a> (Optional)</a></h3>
+<ul>
+<li>An invitation will be sent from &quot;litentry-bot&quot; on Element, accept the invitation</li>
+<li>Click on the verification link from &quot;litentry-bot&quot; to complete verification of the element account. Once the verification process is completed, you will receive a confirmation message (see figure 1.6).</li>
+</ul>
+<p align="center">
+<img src="registrar/./riot.png" alt="litentryReggistrar" width="50%"/></p>
+<p align="center">Figure 1.6 Element Verification Example
+</p>
+<h3 id="step-5-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmltwitter-verificationtwitter-verificationa-optional"><a class="header" href="#step-5-a-hrefhttpsdocslitentrycomregistrarhowtoverifyyouridentityhtmltwitter-verificationtwitter-verificationa-optional">Step 5: <a href="https://docs.litentry.com/registrar/HowToVerifyYourIdentity.html#twitter-verification">Twitter Verification</a> (Optional)</a></h3>
+<ul>
+<li>Follow <strong>@LitentryReg</strong> on Twitter</li>
+<li>Make sure your account is open to private messages in your privacy settings. Otherwise, the verification message will not go through.</li>
+<li>You'll receive a verification link on DM from @LitentryReg. Click on the link to complete verification of your Twitter account. Once it is completed, you will receive a confirmation message (see figure 1.7).</li>
+</ul>
+<p align="center">
+<img src="registrar/./twitter.png" alt="litentryReggistrar" width="50%"/></p>
+<p align="center">Figure 1.7 Twitter Verification Example</p>
+<p>Once everything is successfully verified, you will see your account status become &quot;reasonable&quot; with an ✅ icon. Congratulations - Your identity is now verified on Polkadot-JS Apps!</p>
+<h3 id="register-fee"><a class="header" href="#register-fee">Register Fee</a></h3>
+<p>The judgment fee of the Litentry Registrar is 0.04KSM.</p>
+<p>It's important to notice that no KSM is sent to our registrar at any time before the judgment is completed. You should NOT send funds to our account directly. When calling <code>requestJudgement</code>, the registrar fee will be locked and put aside. It will be transferred to the registrar only after the registrar finishes its job.</p>
+<h3 id="support"><a class="header" href="#support">Support</a></h3>
+<p>If you have any question, contact us via <a href="https://app.element.io/#/room/#litentry-registrar-support:matrix.org">Element Room</a> or registrar-support@litentry.com</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="implementation-details"><a class="header" href="#implementation-details">Implementation Details</a></h1>
+<p>Github Repository: <a href="https://github.com/litentry/litentry-registrar">https://github.com/litentry/litentry-registrar</a></p>
+<p>In this document we highlight the implementation details of how Litentry works as a PolkaDot/Kusama registrar.</p>
+<h2 id="context"><a class="header" href="#context">Context</a></h2>
+<p>When a user has set their identity in Polkadot or Kusama they can request judgment from a registar. In Polkadot the registar can support up to six levels of confidence in their attestation. At the moment Litentry supports four judgment levels and in the future we would like to support <code>KnownGood</code> by integrating with well-known KYC organisations in the future. The <code>LowQuality</code> level will never be supported by Litentry.</p>
+<p>In the implementation details section, the Litentry Registrar Architecture consists of Validators, Event Listener, ProvideJudgement Service, and Database Service. We also introduce a secure method using JWT (JSON Web Token) to construct the verification protocol.</p>
+<h2 id="judgement-levels--criteria"><a class="header" href="#judgement-levels--criteria">Judgement Levels &amp; Criteria</a></h2>
+<p>Registrars on Kusama can provide their judgment according to six levels of confidence for users’ identity:</p>
+<ul>
+<li><code>Unknown</code>: The default value, no judgement made yet.</li>
+<li><code>Reasonable</code>: The data appears reasonable, but no in-depth checks (e.g. formal KYC process) were performed.</li>
+<li><code>KnownGood</code>: The registrar has certified that the information is correct.</li>
+<li><code>OutOfDate</code>: The information used to be good, but is now out of date.</li>
+<li><code>LowQuality</code>: The information is low quality or imprecise, but can be fixed with an update.</li>
+<li><code>Erroneous</code>: The information is erroneous and may indicate malicious intent.</li>
+</ul>
+<p>There is another temporary confidence level used by Polkadot/Kusama.</p>
+<ul>
+<li><code>FeePaid</code>: The judgement has been requested by a user and the information verification is in progress.</li>
+</ul>
+<p>In Litentry we add additional clarification for each of these levels.
+<code>Reasonable</code> : If a user’s <code>display name</code>, <code>email</code>, <code>twitter</code>, or <code>element(previously called riot)</code> identity is verified. Litentry will update the user's identity as <code>Reasonable</code>
+<code>OutOfDate</code> : Litentry registrar keeps track of user's identity to see whether it’s out of date or not updated regularly enough. If a user doesn’t update his identity timely, his identity will degrade to <code>OutOfDate</code>. 
+<code>Erroneous</code>: If any attemp is made by the user user to attack litentry registrar, e.g. DDOS attack, Litentry registrar will provide judgement with <code>Erroneous</code> and refuse to provide a new judgment for him in a specific period.</p>
+<p><code>LowQuality</code> Litentry registar will never provide a judgement of <code>LowQuality</code> Litentry registrar will automatically provide hints to guide the user to update his identity. After all the information is verified correctly, the user will receive a judgment <code>Reasonable</code>. In this way, a user can not only save fees (since we only provide one judgement for him) but also save time (since Litentry registrar will point out imprecise or low quality identity as and when it is captured).</p>
+<p>At the current phase, Litentry registrar does not support providing a judgement level of <code>KnownGood</code> since this would require the cooperation of third-party KYC services. We are working on partnering with the appropriate organisation so that we can support this level in the future.</p>
+<h2 id="registrar-architecture"><a class="header" href="#registrar-architecture">Registrar Architecture</a></h2>
+<p>The key components of the Litentry registrar are shown as follows. It mainly includes Validators, Event Listener, ProvideJudgement Service and Database Service. Figure1.1 presents the architecture of the Litentry registrar, and Figure1.2 shows the main workflow of the registrar.</p>
+<p align="center"><img src="registrar/./registrar12.png" alt="litentryReggistrar" width="60%"/></p>
+<p align="center">Figure 1.1 The Architecture of the Litentry Registrar</p>
+<p>The Event Listener listens to all events coming from the Kusama chain. Once a JudgementRequested event is triggered on Kusama and the JudgementRequested indicates to use the Litentry registrar, the Event Listener service will invoke Validators starting the verification process.</p>
+<p>At the current stage, the Validators consist of three verification services, Email, Element, and Twitter verification. After receiving the verification request from the Event Listener, the Validator will invoke those verification jobs. They will send a verification link to the users provided accounts and wait for user confirmation from their accounts. The email address, twitter account and element name will be verified by Litentry by sending a challenge message that the user must pass to prove their control of the account (See <a href="registrar/HowToVerifyYourIdentity.html">How to Verify Your Identity</a>). As soon as the user confirms all verification links, the ProvideJudgement service will complete the final step, providing judgement for the user. The implementation details will be introduced in the next section.</p>
+<p>Once the user proves the ownership of the Email, Element, and Twitter account, the ProvedeJudgement service will send a JudgementGiven transaction on the Kusama to confirm the ownership of the accounts that the user provides.</p>
+<p>The Database service will temporarily store users’ data, e.g. Kusama account, email, Element, and Twitter account, so that we can recover services from an unpredictable crash. After completing the verification service, those data will be removed from the server permanently.</p>
+<p align="center">
+<img src="registrar/./registrar13.png" alt="litentryReggistrar" width="55%" height="60%"/></p>
+<p align="center">Figure 1.2  The main Workflow of Verification process
+</p>
+<h3 id="security-and-availability"><a class="header" href="#security-and-availability">Security and Availability</a></h3>
+<p>We use JSON Web Token (JWT) to construct the verification protocol. A nonce and an ObjectID (from mongodb) are used to generate the JWT token to ensure security of the Litentry registrar. In this implementation, only the user who requests identity judgement, which implies his/her ownership of this Kusama account, will receive this encrypted token. Malicious users cannot construct this token because of an unknown encryption secret, since nonce and ObjectID are encrypted. And the malicious user has no way to re-play the attacks.</p>
+<p>On the other hand, the websocket (TCP connection) can be easily reset by the remote peer due to long-time idle. In this situation, the events from the Kusama would never be captured due to the disconnection between Kusama and Litentry. To prevent this situation, we capture the events from the underlying websocket connection and reconnect to the Kusama automatically whenever the connection is reset by a peer.</p>
+<h3 id="references"><a class="header" href="#references">References</a></h3>
+<ol>
+<li>[Polkadot/Kusama learn identity]<a href="https://wiki.polkadot.network/docs/en/learn-identity#kusama-registrars">https://wiki.polkadot.network/docs/en/learn-identity#kusama-registrars</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="faq"><a class="header" href="#faq">FAQ</a></h1>
+<blockquote>
+<p>What is the common use case of the identity protocol?</p>
+</blockquote>
+<p>In our protocol, we basically analog most authorization scenarios into a common protocol with four elements: d1. Person or IoT devices Identity d2. Authorization d3. Member's who holds the Authorization d4. External data related to the Identity. Here the Authorization token is similar to the ERC721 standard but not the same, it could be used to help understand the idea. The common idea is that the authorization is a piece of data created by the d1. Person or IoT devices Identity and send to a d3. Member. The Specification of each d1. Person or IoT devices Identity will be saved as d4. External data. This ownership and specification could be proved by the whole network. </p>
+<p>Take door lock for example: An Airbnb host could use a smart lock to issue the digital key on our protocol, the user who has Parity-Signer Wallet (for example) could fetch the token data (d2. Authorization) and send it to the lock by a p2p way (Bluetooth for example) for validation. The lock will interpret the token data with its own pre-defined interpreter function (on-chain or off-chain, still need to think), like how many time a user may enter, what is the entry duration. By this way, the d1 Person or IoT devices could be shared in a decentralized and a securer way. We suppose such kind of authorization would fit the normal business (hotel) and sharing economy very well.</p>
+<blockquote>
+<p>Why use non-fungible-token as key rather than a signed message, e.g. a message signed using the digital key and can be validated by the lock off-chain.</p>
+</blockquote>
+<p>Signing transaction way works in authorization and it is simple. The basic of token authorization model is to validate a piece of information which is sent by the owner. These pieces of messages could be encrypted in the transaction as a message memo, and even transfer to others with last message data include or using a UTXO model.</p>
+<p>In comparison, The &quot;non-fungible-token way&quot; or &quot;ERC721 Standard way&quot; gives a state map of all the authorizations and identity of the IoT device or people. The advantages are:</p>
+<ol>
+<li>
+<p>The relationship between d1. Person or IoT devices Identity d2. Authorization d3. Member's who holds the Authorization could be checked easily, and this is very useful in many scenarios. For example, in an apartment sharing business, the user could know how many keys (tokens) are existed for a certain lock at the moment and further check the ownership of all other keys (tokens). </p>
+</li>
+<li>
+<p>Bulk transactions are more efficient and easy to update (even no need for loops). For example, an identity could easily recall all his authorized tokens, or updates existed tokens information.</p>
+</li>
+<li>
+<p>A state explicitly shows the relationship and will be easy for understanding, and cross-chain programming. The further cross-chain function call will be based on the state information on different parachains.</p>
+</li>
+</ol>
+<p>In addition, the off-chain validation is still possible since the proof of token could directly be the identity (hash) of the token, and its information is retrievable from the state map. User with this information could send it to an off-line validator. ( Or a compromise way is that a validator regularly syncs with blockchain for the tokens and owners of identity, or totally an online validator).</p>
+<blockquote>
+<p>why do we need a GraphQl server? Is it worth the trade-off (complexity, centralization) as opposed to requests being validated directly on chain?</p>
+</blockquote>
+<p>A GraphQl is basically an API server, we have two different views of its usage. </p>
+<ol>
+<li>
+<p>In a short view, since currently there are not so many libraries like oo7 which can directly connect with Substrate Runtime and external IPFS storage. An API server will currently offer fast development and could be used as a good demo for application developers, it could be regarded as Infura on Ethereum.</p>
+</li>
+<li>
+<p>In a long-run view, we supposed it could be a query server for historical and caching server, which could offer fast access for the historical data, good infographics from database, caching the data by event listeners and queries, and reduce the load of the blockchain. Though it is with tradeoffs and comprises to the decentralized architecture, the most important validation and issuing functions will still be accessible directly by Blockchain.</p>
+</li>
+</ol>
+<p>So in summary, the GraphQl API server is a necessary-to-have thing, but whether to use it will be mostly chosen by the application developer. </p>
+<blockquote>
+<p>What is the difference between ID Chain and Lock Chain and the need for each?</p>
+</blockquote>
+<p>Litentry is aimed to offer a basic protocol and related framework, which could be used for fast application development. Both the ID chain and Lock chain are one application based on it. </p>
+<p>The traits of these two chains are in the same protocol with slight differences. Take ID chain, for example, The registry could be the citizen offices in a different city. Permissions would be that the different Right bind with certain people, like (boolean value for over 18 age, int value for tax level, etc). Permissions could be assigned to only one Member, but a member could have more than one Permissions.</p>
+<p>The same in lock chain is that the Locks are a list with all different kinds of lock, the lock owner who has the private key of the lock may issue the access right token to the member, like multiple entry token, or a one-day-pass token. A member could have a different token with different locks, but one token could be only assigned to one person.</p>
+<p>Though there are similarity and difference based on the implementation of the protocol of different traits of parachain. The main difference between these parachains is that they have different cross-chain function based on that. The cross-chain function could be e.g. A insurance (which authorized insurance token) calculate the healthy insurance working permit of ID Chain; the Lock chain will issue the entry token of a shisha bar with validating the age on ID chain; A gym will offer a special membership token to the people who have the entry token of co-working space, etc. All these cross-chain issue and validation will be defined by the cross-chain function on different para chains with the same protocol.</p>
+<p>In addition to that, separate these chains will gain the flexibility to different business scenarios by adding the parachain-scope function. For example, an IoT device Chain with temperature monitors of different locations. A value of all the registered temperature monitors on 24:00 every day could be harvest directly to external storage. But if a user wants to get a piece of detail information on a certain time, he needs to has an authorization token for querying that data. </p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                            </nav>
+
+        </div>
+
+        
+        
+        
+        
+        
+                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+                        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+                
+    </body>
+</html>
